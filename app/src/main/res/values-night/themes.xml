@@ -1,0 +1,57 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <!-- Base application theme. -->
+    <style name="Theme.Horfay" parent="Theme.MaterialComponents.DayNight.DarkActionBar">
+        <!-- Primary brand color. -->
+        <item name="colorPrimary">@color/black</item>
+        <item name="colorPrimaryVariant">@color/black</item>
+        <item name="colorOnPrimary">@color/black</item>
+        <!-- Secondary brand color. -->
+        <item name="colorSecondary">@color/teal_200</item>
+        <item name="colorSecondaryVariant">@color/teal_200</item>
+        <item name="colorOnSecondary">@color/black</item>
+        <!-- Status bar color. -->
+        <item name="android:statusBarColor">?attr/colorPrimaryVariant</item>
+        <!-- Customize your theme here. -->
+        <item name="windowActionBar">false</item>
+        <item name="windowNoTitle">true</item>
+    </style>
+
+    <style name="Theme.AppCompat.HorfaySplash">
+        <item name="windowActionBar">false</item>
+        <item name="windowNoTitle">true</item>
+        <item name="android:windowDisablePreview">true</item>
+        <item name="android:windowIsTranslucent">true</item>
+
+    </style>
+    <style name="Theme.AppCompat.NoActionBar">
+        <item name="windowActionBar">false</item>
+        <item name="windowNoTitle">true</item>
+
+    </style>
+    <style name="CustomSearchViewStyle" parent="Widget.AppCompat.SearchView">
+        <item name="queryBackground">?android:attr/selectableItemBackground</item>
+        <item name="searchIcon">@android:color/transparent</item>
+    </style>
+    <style name="SearchViewStyle" parent="Widget.AppCompat.SearchView">
+        <!-- Customize the search icon -->
+        <item name="searchIcon">@drawable/search</item>
+
+        <!-- Customize the close icon -->
+        <item name="closeIcon">@drawable/ic_baseline_close_24</item>
+
+        <!-- Customize the text color -->
+        <item name="android:textColor">@color/green</item>
+
+        <!-- Customize the hint text color -->
+        <item name="android:textColorHint">@color/yellow</item>
+
+        <!-- Customize the background -->
+        <item name="android:background">@drawable/singin_back</item>
+
+        <!-- Change the search icon position to the left -->
+        <item name="searchHintIcon">@null</item>
+        <item name="android:iconifiedByDefault">false</item>
+        <item name="queryBackground">@color/alice_blue</item>
+    </style>
+
+</resources>

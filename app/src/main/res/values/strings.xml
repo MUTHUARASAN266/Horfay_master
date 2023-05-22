@@ -1,0 +1,42 @@
+<resources>
+    <string name="app_name">Horfay Test</string>
+    <string name="sign_in">Sign in</string>
+    <string name="phone_number">Phone Number</string>
+    <string name="password">Password</string>
+    <string name="remember_me">Remember me</string>
+    <string name="forgot_password">Forgot Password ?</string>
+    <string name="create_a_new_account_sign_up">Create a New Account? <font color="#0D0140">Sign up</font></string>
+    <string name="signup">SignUp</string>
+    <string name="first_name">First Name</string>
+    <string name="last_name">Last Name</string>
+    <string name="email">Email</string>
+    <string name="country">Country</string>
+    <string name="city">City</string>
+    <string name="confirm_password">Confirm Password</string>
+    <string name="sign_up">Sign Up</string>
+    <string name="already_have_an_account_sign_in">Already have an Account? <font color="#0D0140">Sign in</font></string>
+    <string name="terms_and_conditions">I have read and agree to the terms and conditions.</string>
+    <string name="confirm_the_information">I hereby confirm that the information provided herein is correct.</string>
+    <string name="reset_password">RESET PASSWORD</string>
+    <string name="forgot_pass_hint">To reset your password, you need your mobile number that can be authenticated</string>
+    <string name="enter_otp">Enter OTP</string>
+    <string name="verify_hint">we just send you a verify code. check your inbox.</string>
+    <string name="continue_text">Continue</string>
+
+    <string-array name="counry">
+        <item>Please select a country</item>
+        <item>India</item>
+        <item>United States</item>
+        <item>United Kingdom</item>
+        <item>Canada</item>
+        <item>Saudi Arabia</item>
+    </string-array>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="apple_orchard">Apple orchard \n development</string>
+    <string name="apple_repair">Appliance repair \n&amp; service</string>
+    <string name="see_all_text">See All\n</string>
+    <string name="architect_text">Architect\n</string>
+    <string name="salon_spa_text"><![CDATA[Salon & Spa]]></string>
+    <string name="all_categories">All Categories</string>
+</resources>

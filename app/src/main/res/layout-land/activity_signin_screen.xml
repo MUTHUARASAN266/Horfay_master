@@ -1,0 +1,196 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    tools:context=".ui.SigninScreen">
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline_start"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.10" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline_end"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.90" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/textview1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Sign in"
+        android:textColor="@color/black"
+        android:textSize="@dimen/dp32"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="@id/guideline_start"
+        app:layout_constraintTop_toTopOf="@id/guideline_top" />
+
+    <Space
+        android:id="@+id/space"
+        android:layout_width="0dp"
+        android:layout_height="@dimen/dp30"
+        app:layout_constraintEnd_toEndOf="@id/guideline_end"
+        app:layout_constraintStart_toStartOf="@id/guideline_start"
+        app:layout_constraintTop_toBottomOf="@id/textview1">
+
+    </Space>
+
+    <Space
+        android:id="@+id/space_10"
+        android:layout_width="0dp"
+        android:layout_height="@dimen/dp10"
+        app:layout_constraintEnd_toEndOf="@id/guideline_end"
+        app:layout_constraintStart_toStartOf="@id/guideline_start"
+        app:layout_constraintTop_toBottomOf="@id/phone_number_text" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/phone_number_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Phone Number"
+        android:textColor="@color/black"
+        android:textSize="@dimen/textMedium"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="@id/textview1"
+        app:layout_constraintTop_toBottomOf="@id/space" />
+
+    <LinearLayout
+        android:id="@+id/lo"
+        android:layout_width="0dp"
+        android:layout_height="@dimen/dp55"
+        android:background="@drawable/singin_back"
+        android:orientation="horizontal"
+        app:layout_constraintEnd_toEndOf="@id/guideline_end"
+        app:layout_constraintStart_toStartOf="@id/guideline_start"
+        app:layout_constraintTop_toBottomOf="@id/space_10">
+
+        <com.rilixtech.widget.countrycodepicker.CountryCodePicker
+            android:id="@+id/ccp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="@dimen/dp16"
+            app:ccp_countryPreference="IN,US,NZ"
+            app:ccp_defaultCode="91"
+            app:ccp_defaultNameCode="IN"
+            app:ccp_hideNameCode="true"
+            app:ccp_showFlag="false"
+            app:ccp_textColor="#1C2020"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+
+        <androidx.appcompat.widget.AppCompatEditText
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_gravity="center"
+            android:background="#00000000"
+            android:hint="Phone Number"
+            android:inputType="number"
+            android:maxLength="10"
+            android:maxLines="1"
+            android:textCursorDrawable="@null" />
+
+    </LinearLayout>
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/view_pasword"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/dp10"
+        android:text="Password"
+        android:textColor="@color/black"
+        android:textSize="@dimen/textMedium"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@id/text_input"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/phone_number_text"
+        app:layout_constraintTop_toBottomOf="@id/lo" />
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/text_input"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/dp10"
+        android:hint="Password"
+        app:boxStrokeWidth="0dp"
+        app:boxStrokeWidthFocused="0dp"
+        app:hintEnabled="true"
+        app:hintTextColor="@color/ic_launcher_horfay_background"
+        app:hintAnimationEnabled="false"
+        app:layout_constraintEnd_toEndOf="@id/guideline_end"
+        app:layout_constraintStart_toStartOf="@id/guideline_start"
+        app:layout_constraintTop_toBottomOf="@id/view_pasword"
+        app:passwordToggleEnabled="true">
+
+        <androidx.appcompat.widget.AppCompatEditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/singin_back"
+            android:backgroundTint="@color/ic_launcher_horfay_background"
+            android:textCursorDrawable="@null" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.checkbox.MaterialCheckBox
+        android:id="@+id/remember_me_checkbox_box"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Remember me"
+        android:textColor="#AAA6B9"
+        app:layout_constraintStart_toStartOf="@id/text_input"
+        app:layout_constraintTop_toBottomOf="@id/text_input" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/Forgot_password_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/dp12"
+        android:text="Forgot Password ?"
+        app:layout_constraintEnd_toEndOf="@+id/text_input"
+        app:layout_constraintTop_toBottomOf="@id/text_input" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/signin_buttton"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:background="@drawable/singin_back"
+        android:text="Sign In"
+        android:textAllCaps="false"
+        app:layout_constraintEnd_toEndOf="@id/guideline_end"
+        app:layout_constraintStart_toStartOf="@id/guideline_start"
+        app:layout_constraintTop_toBottomOf="@id/remember_me_checkbox_box" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/appCompatTextView2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Create a New Account? Sign up"
+        app:layout_constraintEnd_toEndOf="parent"
+
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/guideline2" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.88" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline_top"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.15" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

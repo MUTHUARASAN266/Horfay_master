@@ -1,0 +1,16 @@
+<layer-list
+    xmlns:android="http://schemas.android.com/apk/res/android">
+    <item>
+        <shape android:shape="rectangle" android:padding="5dp">
+
+            <solid android:color="#C2C2C2"/>
+            <corners
+                android:bottomRightRadius="5dp"
+                android:bottomLeftRadius="5dp"
+                android:topLeftRadius="5dp"
+                android:topRightRadius="5dp"/>
+            <size android:height="19dp" android:width="19dp"/>
+        </shape>
+    </item>
+    <!--<item android:drawable="@drawable/checkbox_back" />-->
+</layer-list>

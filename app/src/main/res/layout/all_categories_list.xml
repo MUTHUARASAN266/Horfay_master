@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="101dp"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:weightSum="3"
+    android:layout_margin="@dimen/dp10"
+    android:orientation="horizontal">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="1">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            android:orientation="vertical">
+            <ImageView
+                android:id="@+id/cat_img_1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:src="@drawable/svg_bg1"/>
+            <TextView
+                android:id="@+id/cat_text_1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/apple_orchard"
+                android:textColor="#41405D"
+                android:textSize="@dimen/sp12"
+                android:padding="@dimen/dp5"
+                android:textAlignment="center"/>
+        </LinearLayout>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <!--<androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="1">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            android:orientation="vertical">
+            <ImageView
+                android:id="@+id/cat_img_2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:src="@drawable/svg_bg2"/>
+            <TextView
+                android:id="@+id/cat_text_2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/apple_repair"
+                android:textColor="#41405D"
+                android:textSize="@dimen/sp12"
+                android:padding="@dimen/dp5"
+                android:textAlignment="center"/>
+        </LinearLayout>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="1">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            android:orientation="vertical">
+            <ImageView
+                android:id="@+id/cat_img_3"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:src="@drawable/svgviewer_bg"/>
+            <TextView
+                android:id="@+id/cat_text_3"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/architect_text"
+                android:textColor="#41405D"
+                android:textSize="@dimen/sp12"
+                android:padding="@dimen/dp5"
+                android:textAlignment="center"/>
+        </LinearLayout>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>-->
+
+</LinearLayout>
