@@ -21,7 +21,14 @@
     <string name="forgot_pass_hint">To reset your password, you need your mobile number that can be authenticated</string>
     <string name="enter_otp">Enter OTP</string>
     <string name="verify_hint">we just send you a verify code. check your inbox.</string>
+    <string name="pin_description">We use state-of-the-art security measures to protect your information at all times.</string>
     <string name="continue_text">Continue</string>
+    <string name="rating_des">Jim has done a fabulous job, it took exactly the same time as mentioned and he came on time to our doorstep.</string>
+    <string name="offering_card_des">Lorem ipsum dolor sit amet, consectetu piscingsds
+sed do eiusmod tempor incididunt ut labore etsdd dolore magna aliqua laboris nisi ut aliquip ex eadfd
+commodo consequat. Duis aute irure fggffgffrddf inreprehenderit</string>
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
 
     <string-array name="counry">
         <item>Please select a country</item>
@@ -39,4 +46,9 @@
     <string name="architect_text">Architect\n</string>
     <string name="salon_spa_text"><![CDATA[Salon & Spa]]></string>
     <string name="all_categories">All Categories</string>
+    <string name="sub_women_sa"><![CDATA[Women Salon & Spa]]></string>
+    <string name="proceed">Proceed</string>
+    <string name="faqs">FAQs</string>
+    <string name="excluded">Excluded</string>
+    <string name="included">Included</string>
 </resources>

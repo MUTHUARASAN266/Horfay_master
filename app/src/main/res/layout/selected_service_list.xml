@@ -1,0 +1,330 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    style="@style/Widget.Horfay.CardView.Background"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_margin="@dimen/dp10"
+    app:cardBackgroundColor="#DADADA"
+    app:cardCornerRadius="@dimen/dp14"
+    app:cardElevation="@dimen/dp10">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_margin="@dimen/dp8"
+        app:cardBackgroundColor="#DADADA">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="@dimen/dp8">
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/text_dum_1"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Selected Services"
+                        android:textColor="@color/black"
+                        android:textSize="@dimen/sp16"
+                        android:textStyle="bold"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <Space
+                        android:id="@+id/space_dum_1"
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/dp10"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/text_dum_1" />
+
+                    <androidx.cardview.widget.CardView
+                        android:id="@+id/card_1"
+                        android:layout_width="@dimen/dp80"
+                        android:layout_height="@dimen/dp79"
+                        app:cardCornerRadius="@dimen/dp10"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/space_dum_1">
+
+                        <androidx.appcompat.widget.AppCompatImageView
+                            android:id="@+id/imgService"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:scaleType="fitXY"
+                            android:src="@drawable/image_s13" />
+                    </androidx.cardview.widget.CardView>
+
+                    <TextView
+                        android:id="@+id/text_service_name"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="@dimen/dp10"
+                        android:text="Diamond Facial"
+                        android:textColor="#161616"
+                        android:textSize="@dimen/sp16"
+                        android:textStyle="bold"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toEndOf="@id/card_1"
+                        app:layout_constraintTop_toBottomOf="@id/space_dum_1" />
+
+                    <TextView
+                        android:id="@+id/text_price"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:text="₹599"
+                        android:textColor="@color/gray"
+                        android:textStyle="bold"
+                        app:layout_constraintEnd_toEndOf="@+id/text_service_name"
+                        app:layout_constraintStart_toStartOf="@+id/text_service_name"
+                        app:layout_constraintTop_toBottomOf="@id/text_service_name" />
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="@dimen/dp8"
+                    android:orientation="vertical">
+
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+
+                        <ImageView
+                            android:id="@+id/dum_img_o1"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:src="@drawable/ellipse_23"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent" />
+
+                        <androidx.appcompat.widget.AppCompatTextView
+                            android:id="@+id/text_service_des1"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:paddingStart="@dimen/dp10"
+                            android:text="45 mins"
+                            app:layout_constraintStart_toEndOf="@id/dum_img_o1"
+                            app:layout_constraintTop_toTopOf="parent" />
+
+
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+
+                        <ImageView
+                            android:id="@+id/dum_img_o2"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:src="@drawable/ellipse_23"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent" />
+
+                        <androidx.appcompat.widget.AppCompatTextView
+                            android:id="@+id/text_service_des2"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:paddingStart="@dimen/dp10"
+                            android:text="For all skin types. Pinacolada mask."
+                            app:layout_constraintStart_toEndOf="@id/dum_img_o2"
+                            app:layout_constraintTop_toTopOf="parent" />
+
+
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+
+                        <ImageView
+                            android:id="@+id/dum_img_o3"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:src="@drawable/ellipse_23"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent" />
+
+                        <androidx.appcompat.widget.AppCompatTextView
+                            android:id="@+id/text_service_des3"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:paddingStart="@dimen/dp10"
+                            android:text="6-step process. Includes 10-min massage"
+                            app:layout_constraintStart_toEndOf="@id/dum_img_o3"
+                            app:layout_constraintTop_toTopOf="parent" />
+
+
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+                </LinearLayout>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="@dimen/dp8">
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/text_dum_s1"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Services Provider"
+                        android:textColor="@color/black"
+                        android:textSize="@dimen/sp16"
+                        android:textStyle="bold"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <Space
+                        android:id="@+id/space_dum_s1"
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/dp10"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/text_dum_s1" />
+
+                    <androidx.cardview.widget.CardView
+                        android:id="@+id/card_s1"
+                        android:layout_width="@dimen/dp80"
+                        android:layout_height="@dimen/dp79"
+                        app:cardCornerRadius="@dimen/dp10"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/space_dum_s1">
+
+                        <androidx.appcompat.widget.AppCompatImageView
+                            android:id="@+id/provider_img"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:scaleType="fitXY"
+                            android:src="@drawable/make_up1" />
+                    </androidx.cardview.widget.CardView>
+
+                    <TextView
+                        android:id="@+id/text_provider_name"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="@dimen/dp10"
+                        android:text="Matikaas Beauty Lounge"
+                        android:textColor="#161616"
+                        android:textSize="@dimen/sp16"
+                        android:textStyle="bold"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toEndOf="@id/card_s1"
+                        app:layout_constraintTop_toBottomOf="@id/space_dum_s1" />
+
+                    <TextView
+                        android:id="@+id/text_rating_provider"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:drawableStart="@drawable/star_svg"
+                        android:drawablePadding="@dimen/dp5"
+                        android:text="4.8"
+                        android:textColor="#757575"
+                        app:layout_constraintEnd_toEndOf="@+id/text_provider_name"
+                        app:layout_constraintStart_toStartOf="@+id/text_provider_name"
+                        app:layout_constraintTop_toBottomOf="@id/text_provider_name" />
+
+                    <TextView
+                        android:id="@+id/text_provider_job"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:drawableStart="@drawable/g_check_svg"
+                        android:drawablePadding="@dimen/dp5"
+                        android:text="88 jobs completed"
+                        android:textColor="#757575"
+                        app:layout_constraintEnd_toEndOf="@+id/text_rating_provider"
+                        app:layout_constraintStart_toStartOf="@+id/text_rating_provider"
+                        app:layout_constraintTop_toBottomOf="@id/text_rating_provider" />
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="@dimen/dp8"
+                    android:orientation="vertical">
+
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+
+                        <ImageView
+                            android:id="@+id/dum_img_os1"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:src="@drawable/ellipse_23"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent" />
+
+                        <androidx.appcompat.widget.AppCompatTextView
+                            android:id="@+id/text_provider_price"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:paddingStart="@dimen/dp10"
+                            android:text="Price  ₹599"
+                            app:layout_constraintStart_toEndOf="@id/dum_img_os1"
+                            app:layout_constraintTop_toTopOf="parent" />
+
+
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+
+                        <ImageView
+                            android:id="@+id/dum_img_oss2"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:src="@drawable/ellipse_23"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent" />
+
+                        <androidx.appcompat.widget.AppCompatTextView
+                            android:id="@+id/text_provider_des"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:paddingStart="@dimen/dp10"
+                            android:text="Specialises in Airbrush Make-up"
+                            app:layout_constraintStart_toEndOf="@id/dum_img_oss2"
+                            app:layout_constraintTop_toTopOf="parent" />
+
+
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+                </LinearLayout>
+            </LinearLayout>
+
+
+        </LinearLayout>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+</androidx.cardview.widget.CardView>

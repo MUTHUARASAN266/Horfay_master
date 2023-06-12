@@ -1,19 +1,19 @@
 <?xml version="1.0" encoding="utf-8"?>
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
     <item
-        android:id="@+id/home"
+        android:id="@+id/home_dashboard"
         android:icon="@drawable/union"
         android:title="Home"  />
     <item
-        android:id="@+id/service"
+        android:id="@+id/service_menu"
         android:icon="@drawable/icon__outline"
         android:title="service" />
     <item
-        android:id="@+id/notification"
+        android:id="@+id/notificationFragment"
         android:icon="@drawable/notification"
         android:title="notification" />
     <item
-        android:id="@+id/message"
+        android:id="@+id/message_menu"
         android:icon="@drawable/message"
         android:title="message" />
 </menu>

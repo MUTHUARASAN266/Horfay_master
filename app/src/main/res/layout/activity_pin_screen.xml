@@ -1,0 +1,160 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".PinScreen">
+
+    <com.google.android.material.appbar.AppBarLayout
+        android:id="@+id/appbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/transparent"
+        app:elevation="0dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <com.google.android.material.appbar.MaterialToolbar
+            android:layout_width="match_parent"
+            android:layout_height="56dp">
+
+            <ImageView
+                android:id="@+id/back_button"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/back_press_icon" />
+        </com.google.android.material.appbar.MaterialToolbar>
+
+
+    </com.google.android.material.appbar.AppBarLayout>
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline_start"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.10" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline_end"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.90" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline_top"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.25" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline_bottom"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.90" />
+
+    <TextView
+        android:id="@+id/dum1"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="Enter Your Pin"
+        android:textColor="@color/black"
+        android:textSize="30sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="@id/guideline_end"
+        app:layout_constraintStart_toStartOf="@id/guideline_start"
+        app:layout_constraintTop_toBottomOf="@id/guideline_top" />
+
+    <Space
+        android:id="@+id/space_10"
+        android:layout_width="0dp"
+        android:layout_height="@dimen/dp10"
+        app:layout_constraintEnd_toEndOf="@id/guideline_end"
+        app:layout_constraintStart_toStartOf="@id/guideline_start"
+        app:layout_constraintTop_toBottomOf="@id/dum1" />
+
+    <TextView
+        android:id="@+id/dum21"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="@string/pin_description"
+        android:textAlignment="center"
+        android:textSize="@dimen/sp16"
+        app:layout_constraintEnd_toEndOf="@id/guideline_end"
+        app:layout_constraintStart_toStartOf="@id/guideline_start"
+        app:layout_constraintTop_toBottomOf="@+id/space_10" />
+
+    <Space
+        android:id="@+id/space_10_1"
+        android:layout_width="0dp"
+        android:layout_height="@dimen/dp10"
+        app:layout_constraintEnd_toEndOf="@id/guideline_end"
+        app:layout_constraintStart_toStartOf="@id/guideline_start"
+        app:layout_constraintTop_toBottomOf="@id/dum21" />
+
+    <com.chaos.view.PinView
+        android:id="@+id/pass_pin"
+        style="@style/PinWidget.PinView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:inputType="number"
+        android:itemBackground="@drawable/singin_back"
+        android:padding="@dimen/dp10"
+        android:textColor="@color/black"
+        android:textColorHint="@color/gray"
+        android:textSize="18sp"
+        app:cursorColor="@color/gray"
+        app:hideLineWhenFilled="true"
+        app:itemCount="4"
+        app:itemRadius="4dp"
+        app:itemSpacing="@dimen/dp20"
+        app:layout_constraintEnd_toEndOf="@id/guideline_end"
+        app:layout_constraintStart_toStartOf="@id/guideline_start"
+        app:layout_constraintTop_toBottomOf="@id/space_10_1"
+        app:lineColor="@color/gray" />
+
+    <Space
+        android:id="@+id/space_10_2"
+        android:layout_width="0dp"
+        android:layout_height="@dimen/dp10"
+        app:layout_constraintEnd_toEndOf="@id/guideline_end"
+        app:layout_constraintStart_toStartOf="@id/guideline_start"
+        app:layout_constraintTop_toBottomOf="@id/pass_pin" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/button_continue_pin"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:background="@drawable/singin_back"
+        android:text="@string/continue_text"
+        android:textAllCaps="false"
+        android:textColor="@color/black"
+        app:layout_constraintEnd_toEndOf="@id/guideline_end"
+        app:layout_constraintStart_toStartOf="@id/guideline_start"
+        app:layout_constraintTop_toBottomOf="@id/space_10_2" />
+
+    <Space
+        android:id="@+id/space_10_3"
+        android:layout_width="0dp"
+        android:layout_height="@dimen/dp10"
+        app:layout_constraintEnd_toEndOf="@id/guideline_end"
+        app:layout_constraintStart_toStartOf="@id/guideline_start"
+        app:layout_constraintTop_toBottomOf="@id/button_continue_pin" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/forgo_pin_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Forgot Pin?"
+        android:textAlignment="center"
+        android:textColor="@color/black"
+        app:layout_constraintEnd_toEndOf="@+id/button_continue_pin"
+        app:layout_constraintTop_toBottomOf="@id/space_10_3" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

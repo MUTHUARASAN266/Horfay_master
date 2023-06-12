@@ -1,19 +1,16 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="wrap_content"
     android:layout_height="wrap_content"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_margin="@dimen/dp10"
-    android:orientation="vertical"
-    xmlns:android="http://schemas.android.com/apk/res/android">
+    android:orientation="vertical">
 
     <com.google.android.material.card.MaterialCardView
-        xmlns:android="http://schemas.android.com/apk/res/android"
-        android:layout_width="138dp"
-        android:layout_height="152dp"
+        android:layout_width="@dimen/dp138"
+        android:layout_height="@dimen/dp152"
         app:cardBackgroundColor="@color/white"
-        app:cardCornerRadius="15dp"
-        xmlns:app="http://schemas.android.com/apk/res-auto">
+        app:cardCornerRadius="@dimen/dp15">
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
@@ -23,6 +20,7 @@
                 android:id="@+id/service_img"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
+                android:scaleType="fitXY"
                 android:src="@drawable/image3"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
@@ -31,14 +29,15 @@
 
 
     </com.google.android.material.card.MaterialCardView>
+
     <TextView
         android:id="@+id/service_text"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/dp10"
+        android:text="Home Cleaning"
         android:textAlignment="center"
         android:textColor="#252843"
-        android:textStyle="bold"
-        android:layout_marginTop="@dimen/dp10"
-        android:text="Home Cleaning"/>
+        android:textStyle="bold" />
 </LinearLayout>
 

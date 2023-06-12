@@ -8,7 +8,8 @@ import android.widget.ArrayAdapter
 import android.widget.TextView
 
 
-class DropDownAdapter(context: Context, layout: Int, country: Array<String>): ArrayAdapter<String>(context, layout, country) {
+class DropDownAdapter(context: Context, layout: Int, country: Array<String>) :
+    ArrayAdapter<String>(context, layout, country) {
 
     override fun isEnabled(position: Int): Boolean {
         return position != 0
@@ -30,8 +31,8 @@ class DropDownAdapter(context: Context, layout: Int, country: Array<String>): Ar
         return view
     }
 
-  /*  override fun getView(position: Int, convertView: View?, parent: ViewGroup): View {
+    /*  override fun getView(position: Int, convertView: View?, parent: ViewGroup): View {
 
-        return super.getView(position, convertView, parent)
-    }*/
+          return super.getView(position, convertView, parent)
+      }*/
 }

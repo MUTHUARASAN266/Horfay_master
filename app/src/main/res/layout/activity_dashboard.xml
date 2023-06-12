@@ -7,92 +7,140 @@
     android:background="@color/white"
     tools:context=".Dashboard">
 
-   <!-- <com.google.android.material.appbar.AppBarLayout
-        android:id="@+id/appbar"
+    <!-- <com.google.android.material.appbar.AppBarLayout
+         android:id="@+id/appbar"
+         android:layout_width="match_parent"
+         android:layout_height="wrap_content"
+         app:elevation="5dp"
+         android:background="@color/white"
+         app:layout_constraintStart_toStartOf="parent"
+         app:layout_constraintEnd_toEndOf="parent"
+         app:layout_constraintTop_toTopOf="parent">
+         <com.google.android.material.appbar.MaterialToolbar
+             android:layout_width="match_parent"
+             android:layout_height="56dp"
+             >
+          &lt;!&ndash;   <ImageView
+                 android:id="@+id/back_button"
+                 android:layout_width="wrap_content"
+                 android:layout_height="wrap_content"
+                 android:layout_gravity="center"
+                 android:src="@drawable/ic_baseline_menu"/>
+             <TextView
+                 android:layout_width="wrap_content"
+                 android:layout_height="wrap_content"
+                 android:layout_gravity="center"
+                 android:text="@string/hello_blank_fragment"/>
+             <TextView
+                 android:layout_width="wrap_content"
+                 android:layout_height="wrap_content"
+                 android:end="@dimen/dp10"
+                 android:text="@string/hello_blank_fragment"/>&ndash;&gt;
+             <LinearLayout
+                 android:layout_width="wrap_content"
+                 android:layout_height="wrap_content"
+                 android:layout_gravity="center">
+                 <ImageView
+                     android:id="@+id/back_button"
+                     android:layout_width="wrap_content"
+                     android:layout_height="wrap_content"
+                     android:layout_gravity="center"
+                     android:src="@drawable/ic_baseline_menu"/>
+                 <LinearLayout
+                     android:layout_width="wrap_content"
+                     android:layout_height="wrap_content"
+                     android:orientation="vertical"
+                     android:padding="@dimen/dp10">
+                     <TextView
+                         android:layout_width="wrap_content"
+                         android:layout_height="wrap_content"
+                         android:textSize="11sp"
+                         android:textColor="@color/gray"
+                         android:text="CURRENT LOCATION"/>
+                     <TextView
+                         android:layout_width="wrap_content"
+                         android:layout_height="wrap_content"
+                         android:textSize="@dimen/sp13"
+                         android:textColor="#172B4D"
+                         android:text="26A, KAZHUGAPULIKADU"/>
+                 </LinearLayout>
+             </LinearLayout>
+
+         </com.google.android.material.appbar.MaterialToolbar>
+
+
+     </com.google.android.material.appbar.AppBarLayout>-->
+
+    <!--
+    <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        app:elevation="5dp"
-        android:background="@color/white"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
-        <com.google.android.material.appbar.MaterialToolbar
+        android:layout_height="match_parent"
+        >
+        <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="56dp"
-            >
-         &lt;!&ndash;   <ImageView
-                android:id="@+id/back_button"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center"
-                android:src="@drawable/ic_baseline_menu"/>
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center"
-                android:text="@string/hello_blank_fragment"/>
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:end="@dimen/dp10"
-                android:text="@string/hello_blank_fragment"/>&ndash;&gt;
-            <LinearLayout
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center">
-                <ImageView
-                    android:id="@+id/back_button"
-                    android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+                <androidx.fragment.app.FragmentContainerView
+                    android:id="@+id/fragmentContainerView"
+                    android:name="androidx.navigation.fragment.NavHostFragment"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_gravity="center"
-                    android:src="@drawable/ic_baseline_menu"/>
-                <LinearLayout
-                    android:layout_width="wrap_content"
+                    app:defaultNavHost="true"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintBottom_toTopOf="@id/bottom_navi"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:navGraph="@navigation/nav_graph" />
+
+                <com.google.android.material.bottomnavigation.BottomNavigationView
+                    android:id="@+id/bottom_navi"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:orientation="vertical"
-                    android:padding="@dimen/dp10">
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:textSize="11sp"
-                        android:textColor="@color/gray"
-                        android:text="CURRENT LOCATION"/>
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:textSize="@dimen/sp13"
-                        android:textColor="#172B4D"
-                        android:text="26A, KAZHUGAPULIKADU"/>
-                </LinearLayout>
-            </LinearLayout>
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:menu="@menu/nav_menu"
+                    android:scrollIndicators="left"
+                    app:elevation="5dp"
+                    android:background="@color/white"
+                    app:layout_constraintBottom_toBottomOf="parent"/>
+            </androidx.constraintlayout.widget.ConstraintLayout>
+        </LinearLayout>
 
-        </com.google.android.material.appbar.MaterialToolbar>
+    </ScrollView>
+    -->
 
-
-    </com.google.android.material.appbar.AppBarLayout>-->
-
-    <androidx.fragment.app.FragmentContainerView
+    <fragment
         android:id="@+id/fragmentContainerView"
         android:name="androidx.navigation.fragment.NavHostFragment"
         android:layout_width="match_parent"
         android:layout_height="0dp"
         app:defaultNavHost="true"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior"
         app:layout_constraintBottom_toTopOf="@id/bottom_navi"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:navGraph="@navigation/nav_graph" />
+
+
+
+
+
 
     <com.google.android.material.bottomnavigation.BottomNavigationView
         android:id="@+id/bottom_navi"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:menu="@menu/nav_menu"
+        android:background="@color/white"
         android:scrollIndicators="left"
         app:elevation="5dp"
-        android:background="@color/white"
-        app:layout_constraintBottom_toBottomOf="parent"/>
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:menu="@menu/nav_menu" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
