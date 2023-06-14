@@ -1,14 +1,13 @@
-package com.example.horfay123
+package com.example.horfay123.ui
 
 import android.content.Intent
 import android.os.Bundle
 import android.util.Log
-import android.view.View
 import android.widget.Button
 import android.widget.LinearLayout
 import androidx.appcompat.app.AppCompatActivity
-import androidx.coordinatorlayout.widget.CoordinatorLayout
 import androidx.recyclerview.widget.LinearLayoutManager
+import com.example.horfay123.R
 import com.example.horfay123.adapter.ImageSliderAdapter
 import com.example.horfay123.adapter.SelectServiceAdapter
 import com.example.horfay123.databinding.ActivitySelectedServiceScreenBinding
@@ -18,7 +17,6 @@ import com.example.horfay123.model.ServiceOfferData
 import com.google.android.material.bottomsheet.BottomSheetBehavior
 import com.google.android.material.bottomsheet.BottomSheetDialog
 import com.smarteist.autoimageslider.SliderView
-import com.smarteist.autoimageslider.SliderViewAdapter
 
 class SelectedServiceScreen : AppCompatActivity() {
     val TAG = "SelectedServiceScreen"
@@ -41,7 +39,9 @@ class SelectedServiceScreen : AppCompatActivity() {
             }
             buttonSelectService.setOnClickListener {
                 val bottomSheetDialog: BottomSheetDialog =
-                    BottomSheetDialog(this@SelectedServiceScreen,R.style.CustomBottomSheetDialogTheme)
+                    BottomSheetDialog(this@SelectedServiceScreen,
+                        R.style.CustomBottomSheetDialogTheme
+                    )
                 val view = bottomSheetDialog.layoutInflater.inflate(
                     R.layout.sub_categories_bootomsheet,
                     null

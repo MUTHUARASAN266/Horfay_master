@@ -1,4 +1,4 @@
-package com.example.horfay123
+package com.example.horfay123.ui
 
 import android.content.Intent
 import android.os.Bundle
@@ -6,12 +6,15 @@ import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.ImageView
+import android.view.WindowManager
 import androidx.appcompat.widget.Toolbar
+import androidx.constraintlayout.widget.ConstraintLayout
 import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import com.example.horfay123.R
+import com.example.horfay123.SharedPreferences
 import com.example.horfay123.adapter.CleaningServicesAdapter
 import com.example.horfay123.databinding.FragmentHomeDashboardBinding
 import com.example.horfay123.model.CleaningSerData
@@ -29,6 +32,7 @@ class HomeDashboard : Fragment(R.layout.fragment_home_dashboard) {
         super.onCreate(savedInstanceState)
         val locala=arguments?.getString("address123")
         Log.e(TAG, "onCreate: $locala")
+        activity?.window?.setSoftInputMode(WindowManager.LayoutParams.SOFT_INPUT_ADJUST_PAN);
 
     }
 
@@ -36,6 +40,8 @@ class HomeDashboard : Fragment(R.layout.fragment_home_dashboard) {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
+        activity?.window?.setSoftInputMode(WindowManager.LayoutParams.SOFT_INPUT_ADJUST_PAN);
+
         // Inflate the layout for this fragment
         binding = FragmentHomeDashboardBinding.inflate(inflater, container, false)
 
@@ -43,7 +49,7 @@ class HomeDashboard : Fragment(R.layout.fragment_home_dashboard) {
         val locala=arguments?.getString("address123")
         Log.e(TAG, "onCreateView: $local$locala", )
 
-        val sharedPreferences=SharedPreferences(context)
+        val sharedPreferences= SharedPreferences(context)
         sharedPreferences.loadData("myCurrentLocation")
         binding.myCourentLocation.text=sharedPreferences.loadData("myCurrentLocation")
         Log.e(TAG, "myCurrentLocation: ${sharedPreferences.loadData("myCurrentLocation")}", )
@@ -76,24 +82,26 @@ class HomeDashboard : Fragment(R.layout.fragment_home_dashboard) {
                 findNavController().navigate(R.id.action_home_dashboard_to_allCategories)
             }
             appleOrchard.setOnClickListener {
-                startActivity(Intent(activity,SubCategoriesScreen::class.java).putExtra("UNIT_ID","Apple orchard development"))
+                startActivity(Intent(activity, SubCategoriesScreen::class.java).putExtra("UNIT_ID","Apple orchard development"))
             }
             appleRepair.setOnClickListener {
-                startActivity(Intent(activity,SubCategoriesScreen::class.java).putExtra("UNIT_ID","Appliance repair & service"))
+                startActivity(Intent(activity, SubCategoriesScreen::class.java).putExtra("UNIT_ID","Appliance repair & service"))
             }
             architect.setOnClickListener {
-                startActivity(Intent(activity,SubCategoriesScreen::class.java).putExtra("UNIT_ID","Architect"))
+                startActivity(Intent(activity, SubCategoriesScreen::class.java).putExtra("UNIT_ID","Architect"))
             }
 
             changeLocation.setOnClickListener {
                 // BottomSheetDialog
 
 //                val bottomSheetDialog: BottomSheetDialog = BottomSheetDialog(this@SelectedServiceScreen,R.style.CustomBottomSheetDialogTheme)
-                val bottomSheetDialog: BottomSheetDialog = BottomSheetDialog(requireContext(),R.style.CustomBottomSheetDialogTheme)
+                val bottomSheetDialog: BottomSheetDialog = BottomSheetDialog(requireContext(),
+                    R.style.CustomBottomSheetDialogTheme
+                )
                 val view=bottomSheetDialog.layoutInflater.inflate(R.layout.change_location_bottomscreen,null)
 
-                view.findViewById<ImageView>(R.id.map_button).setOnClickListener {
-                    startActivity(Intent(requireContext(),MapsActivity::class.java))
+                view.findViewById<ConstraintLayout>(R.id.map_button).setOnClickListener {
+                    startActivity(Intent(requireContext(), MapsActivity::class.java))
                 }
                 bottomSheetDialog.setContentView(view)
                 bottomSheetDialog.show()

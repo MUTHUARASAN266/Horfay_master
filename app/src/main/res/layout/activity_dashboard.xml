@@ -5,7 +5,8 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/white"
-    tools:context=".Dashboard">
+    android:fitsSystemWindows="true"
+    tools:context=".ui.Dashboard">
 
     <!-- <com.google.android.material.appbar.AppBarLayout
          android:id="@+id/appbar"
@@ -119,6 +120,7 @@
         android:layout_width="match_parent"
         android:layout_height="0dp"
         app:defaultNavHost="true"
+        android:fitsSystemWindows="true"
         app:layout_behavior="@string/appbar_scrolling_view_behavior"
         app:layout_constraintBottom_toTopOf="@id/bottom_navi"
         app:layout_constraintEnd_toEndOf="parent"

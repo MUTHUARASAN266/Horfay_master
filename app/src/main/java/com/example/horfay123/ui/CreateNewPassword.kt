@@ -7,7 +7,6 @@ import android.text.Editable
 import android.text.TextWatcher
 import androidx.core.content.ContextCompat
 import com.example.horfay123.R
-import com.example.horfay123.SuccessfullyScreen
 import com.example.horfay123.databinding.ActivityCreateNewPasswordBinding
 import com.example.horfay123.snack
 
@@ -25,7 +24,7 @@ class CreateNewPassword : AppCompatActivity() {
             }
             buttonSubmit.setOnClickListener {
                 if (editTextNewPassword.text.toString().trim()==editTextConfirmPassword.text.toString().trim()){
-                    startActivity(Intent(this@CreateNewPassword,SuccessfullyScreen::class.java))
+                    startActivity(Intent(this@CreateNewPassword, SuccessfullyScreen::class.java))
                 }else{
                     it.snack("password mismatch",1500)
                 }

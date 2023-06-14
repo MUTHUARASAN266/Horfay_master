@@ -18,7 +18,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/white"
-    tools:context=".MapsActivity">
+    tools:context=".ui.MapsActivity">
 
  <com.google.android.material.appbar.AppBarLayout
     android:id="@+id/appbar"
@@ -135,6 +135,7 @@
         </LinearLayout>
 
         <Button
+            android:id="@+id/btn_confirm_location"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:background="@drawable/singin_back"

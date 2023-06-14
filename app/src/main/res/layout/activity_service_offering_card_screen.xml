@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ServiceOfferingCardScreen">
+    tools:context=".ui.ServiceOfferingCardScreen">
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/appbar"
@@ -87,6 +87,7 @@
                 app:layout_constraintTop_toBottomOf="@id/name_of_service_vendor" />
 
             <TextView
+                android:id="@+id/btn_vendor_profile"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:paddingEnd="@dimen/dp20"

@@ -1,17 +1,17 @@
-package com.example.horfay123
+package com.example.horfay123.ui
 
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
 import android.view.View
-import android.view.ViewDebug
 import androidx.recyclerview.widget.GridLayoutManager
+import com.example.horfay123.R
 import com.example.horfay123.adapter.ServiceOfferAdapter
 import com.example.horfay123.adapter.ServiceOfferClickListener
 import com.example.horfay123.databinding.ActivityServiceOfferingScreenBinding
 import com.example.horfay123.model.ServiceOfferData
-import com.google.android.material.snackbar.Snackbar
+import com.example.horfay123.toast
 
 class ServiceOfferingScreen : AppCompatActivity(), ServiceOfferClickListener {
     var TAG = "ServiceOfferingScreen"
@@ -51,7 +51,7 @@ class ServiceOfferingScreen : AppCompatActivity(), ServiceOfferClickListener {
             if (currentItem.isChecked){
                 buttonProceed.visibility=View.VISIBLE
                 buttonProceed.setOnClickListener {
-                    Intent(this@ServiceOfferingScreen,SelectedServiceScreen::class.java).apply {
+                    Intent(this@ServiceOfferingScreen, SelectedServiceScreen::class.java).apply {
                         this.putExtra("data_service", currentItem)
                         startActivity(this)
                     }

@@ -1,4 +1,4 @@
-package com.example.horfay123
+package com.example.horfay123.ui
 
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
@@ -6,8 +6,9 @@ import android.os.Bundle
 import android.text.Editable
 import android.text.TextWatcher
 import androidx.core.content.ContextCompat
+import com.example.horfay123.R
 import com.example.horfay123.databinding.ActivityPinScreenBinding
-import com.example.horfay123.ui.ForgotPassword
+import com.example.horfay123.snack
 
 class PinScreen : AppCompatActivity() {
     lateinit var binding: ActivityPinScreenBinding

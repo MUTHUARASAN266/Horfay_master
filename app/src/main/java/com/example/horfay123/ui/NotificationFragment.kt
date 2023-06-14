@@ -1,11 +1,11 @@
-package com.example.horfay123
+package com.example.horfay123.ui
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import androidx.navigation.fragment.findNavController
+import com.example.horfay123.R
 import com.example.horfay123.databinding.FragmentNotificationBinding
 
 class NotificationFragment : Fragment(R.layout.fragment_notification) {

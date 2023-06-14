@@ -8,7 +8,6 @@ import android.os.Bundle
 import android.text.Editable
 import android.text.TextWatcher
 import android.util.Log
-import android.view.View
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.app.ActivityCompat
@@ -17,15 +16,12 @@ import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import com.example.horfay123.*
 import com.example.horfay123.databinding.ActivitySigninScreenBinding
-import com.example.horfay123.model.LoginData
 import com.example.horfay123.network.NetworkService
 import com.example.horfay123.repository.LoginRepository
 import com.example.horfay123.viewmodel.LoginViewModel
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
-import kotlinx.coroutines.delay
 import kotlinx.coroutines.launch
-import org.json.JSONObject
 
 class SigninScreen : AppCompatActivity() {
     var TAG = SigninScreen::class.java.simpleName

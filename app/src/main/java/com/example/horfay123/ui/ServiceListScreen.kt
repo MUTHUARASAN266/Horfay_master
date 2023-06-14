@@ -1,10 +1,11 @@
-package com.example.horfay123
+package com.example.horfay123.ui
 
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.LinearLayout
 import androidx.recyclerview.widget.LinearLayoutManager
+import com.example.horfay123.R
 import com.example.horfay123.`interface`.VendorList
 import com.example.horfay123.adapter.ListOfServiceAdapter
 import com.example.horfay123.databinding.ActivityServiceListScreenBinding
@@ -73,7 +74,9 @@ class ServiceListScreen : AppCompatActivity(),VendorList {
             recyclerviewServiceList.adapter = myAdapter
 
             imgFilter.setOnClickListener {
-                val bottomSheetDialog=BottomSheetDialog(this@ServiceListScreen,R.style.CustomBottomSheetDialogTheme)
+                val bottomSheetDialog=BottomSheetDialog(this@ServiceListScreen,
+                    R.style.CustomBottomSheetDialogTheme
+                )
                 val view=bottomSheetDialog.layoutInflater.inflate(R.layout.filter_bottomsheet,null)
                 val vbv=view.findViewById<LinearLayout>(R.id.muthu_layout_filter)
                 val behavior = BottomSheetBehavior.from(vbv)
@@ -86,6 +89,6 @@ class ServiceListScreen : AppCompatActivity(),VendorList {
     }
 
     override fun onUnitItemClick(currentItem: ListOfServiceData) {
-        startActivity(Intent(this,ServiceOfferingCardScreen::class.java))
+        startActivity(Intent(this, ServiceOfferingCardScreen::class.java))
     }
 }

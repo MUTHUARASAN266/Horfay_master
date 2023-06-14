@@ -1,4 +1,4 @@
-package com.example.horfay123
+package com.example.horfay123.ui
 
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
@@ -7,10 +7,9 @@ import android.util.Log
 import android.view.View
 import androidx.fragment.app.Fragment
 import androidx.navigation.NavController
-import androidx.navigation.findNavController
 import androidx.navigation.fragment.NavHostFragment
 import androidx.navigation.ui.setupWithNavController
-import com.example.horfay123.ui.SigninScreen
+import com.example.horfay123.R
 import com.google.android.material.bottomnavigation.BottomNavigationView
 
 class Dashboard : AppCompatActivity() {

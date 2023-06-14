@@ -29,61 +29,62 @@
             android:value="AIzaSyB-Xxu61jWYLpjLYa2UMV1coBG-_yEi97M" />
 
         <activity
-            android:name=".MapsActivity"
+            android:name=".ui.MapsActivity"
             android:exported="false"
             android:label="@string/title_activity_maps" />
 
         <activity
-            android:name=".ServiceOfferingCardScreen"
+            android:name=".ui.ServiceOfferingCardScreen"
             android:exported="false">
             <meta-data
                 android:name="android.app.lib_name"
                 android:value="" />
         </activity>
         <activity
-            android:name=".ServiceListScreen"
+            android:name=".ui.ServiceListScreen"
             android:exported="false">
             <meta-data
                 android:name="android.app.lib_name"
                 android:value="" />
         </activity>
         <activity
-            android:name=".SelectedServiceScreen"
+            android:name=".ui.SelectedServiceScreen"
             android:exported="false">
             <meta-data
                 android:name="android.app.lib_name"
                 android:value="" />
         </activity>
         <activity
-            android:name=".ServiceOfferingScreen"
+            android:name=".ui.ServiceOfferingScreen"
             android:exported="false">
             <meta-data
                 android:name="android.app.lib_name"
                 android:value="" />
         </activity>
         <activity
-            android:name=".SubCategoriesScreen"
+            android:name=".ui.SubCategoriesScreen"
             android:exported="false">
             <meta-data
                 android:name="android.app.lib_name"
                 android:value="" />
         </activity>
         <activity
-            android:name=".PinScreen"
+            android:name=".ui.PinScreen"
             android:exported="false">
             <meta-data
                 android:name="android.app.lib_name"
                 android:value="" />
         </activity>
         <activity
-            android:name=".Dashboard"
-            android:exported="false">
+            android:name=".ui.Dashboard"
+            android:exported="false"
+            android:windowSoftInputMode="adjustResize">
             <meta-data
                 android:name="android.app.lib_name"
                 android:value="" />
         </activity>
         <activity
-            android:name=".SuccessfullyScreen"
+            android:name=".ui.SuccessfullyScreen"
             android:exported="false">
             <meta-data
                 android:name="android.app.lib_name"

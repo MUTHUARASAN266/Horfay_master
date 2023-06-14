@@ -1,4 +1,4 @@
-package com.example.horfay123
+package com.example.horfay123.ui
 
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
@@ -6,6 +6,7 @@ import android.os.Bundle
 import android.util.Log
 import android.view.View
 import androidx.recyclerview.widget.GridLayoutManager
+import com.example.horfay123.R
 import com.example.horfay123.adapter.SubCatAdapter
 import com.example.horfay123.adapter.SubCatClickListener
 import com.example.horfay123.databinding.ActivitySubCategoriesScreenBinding

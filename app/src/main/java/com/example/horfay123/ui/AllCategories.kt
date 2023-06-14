@@ -1,13 +1,15 @@
-package com.example.horfay123
+package com.example.horfay123.ui
 
 import android.content.Intent
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.view.WindowManager
 import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.GridLayoutManager
+import com.example.horfay123.R
 import com.example.horfay123.adapter.AllCategoriesAdapter
 import com.example.horfay123.adapter.UnitClickListener
 import com.example.horfay123.databinding.FragmentAllCategoriesBinding
@@ -17,7 +19,8 @@ class AllCategories : Fragment(R.layout.fragment_all_categories), UnitClickListe
     lateinit var binding: FragmentAllCategoriesBinding
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-
+       // activity?.window?.setSoftInputMode(WindowManager.LayoutParams.SOFT_INPUT_ADJUST_PAN);
+        activity?.window?.setSoftInputMode(WindowManager.LayoutParams.SOFT_INPUT_ADJUST_PAN or WindowManager.LayoutParams.SOFT_INPUT_STATE_HIDDEN)
     }
 
     override fun onCreateView(
@@ -26,6 +29,7 @@ class AllCategories : Fragment(R.layout.fragment_all_categories), UnitClickListe
     ): View? {
         // Inflate the layout for this fragment
         binding = FragmentAllCategoriesBinding.inflate(inflater, container, false)
+        activity?.window?.setSoftInputMode(WindowManager.LayoutParams.SOFT_INPUT_ADJUST_PAN);
 
         binding.apply {
             backArrow.setOnClickListener {

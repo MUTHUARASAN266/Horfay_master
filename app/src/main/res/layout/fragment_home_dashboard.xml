@@ -5,7 +5,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".HomeDashboard"
+    tools:context=".ui.HomeDashboard"
+    android:fitsSystemWindows="true"
     android:id="@+id/drawer_dash_board">
 
 
@@ -13,6 +14,7 @@
         android:tag="menu"
         android:layout_width="match_parent"
         android:background="@color/gray"
+        android:fitsSystemWindows="true"
         android:layout_height="match_parent">
 
         <LinearLayout
@@ -129,6 +131,7 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:tag="content"
+        android:fitsSystemWindows="true"
         app:cardElevation="20dp"
         >
 
@@ -212,15 +215,18 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:scrollbars="none"
+                android:fitsSystemWindows="true"
                 app:layout_constraintTop_toBottomOf="@id/appbar">
 
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:fitsSystemWindows="true"
                     android:orientation="vertical">
 
                     <androidx.constraintlayout.widget.ConstraintLayout
                         android:layout_width="match_parent"
+                        android:fitsSystemWindows="true"
                         android:layout_height="match_parent">
 
                         <com.google.android.material.card.MaterialCardView
@@ -229,6 +235,7 @@
                             android:layout_height="wrap_content"
                             app:cardBackgroundColor="@color/white"
                             app:cardCornerRadius="15dp"
+                            android:fitsSystemWindows="true"
                             app:cardElevation="@dimen/dp10"
                             app:layout_constraintEnd_toEndOf="@id/guideline_end"
                             app:layout_constraintStart_toStartOf="@id/guideline_start"
@@ -278,7 +285,7 @@
                                         android:background="@drawable/singin_back"
                                         android:ems="10"
                                         android:hint="Search what you need..."
-                                        android:imeOptions="actionNext"
+                                        android:imeOptions="actionDone"
                                         android:inputType="textPersonName"
                                         android:paddingStart="@dimen/dp10"
                                         android:textCursorDrawable="@null"

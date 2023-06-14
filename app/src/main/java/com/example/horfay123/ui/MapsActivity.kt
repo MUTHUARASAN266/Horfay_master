@@ -1,4 +1,4 @@
-package com.example.horfay123
+package com.example.horfay123.ui
 
 import android.Manifest
 import android.content.Context
@@ -13,7 +13,10 @@ import android.os.Looper
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.app.ActivityCompat
 import androidx.core.content.ContextCompat
+import com.example.horfay123.R
+import com.example.horfay123.SharedPreferences
 import com.example.horfay123.databinding.ActivityMapsBinding
+import com.example.horfay123.snack
 import com.google.android.gms.location.*
 import com.google.android.gms.maps.CameraUpdateFactory
 import com.google.android.gms.maps.GoogleMap
@@ -54,6 +57,10 @@ class MapsActivity : AppCompatActivity(), OnMapReadyCallback {
             it.snack("finding...",1000)
         }
 
+        binding.btnConfirmLocation.setOnClickListener {
+                finish()
+        }
+
     }
 
     private fun getMyCurrentLocation() {
@@ -83,7 +90,7 @@ class MapsActivity : AppCompatActivity(), OnMapReadyCallback {
                 mMap.clear()
                 mMap.addMarker(
                     MarkerOptions().position(currentLocation).title("Move pin to your exact location")
-                        .icon(generateBitmapDescriptorFromRes(this,R.drawable. marker_map12)))
+                        .icon(generateBitmapDescriptorFromRes(this, R.drawable.marker_map12)))
                 mMap.animateCamera(CameraUpdateFactory.newLatLngZoom(currentLocation, 16F))
                 getAddress(location.latitude, location.longitude)
             }
@@ -138,7 +145,9 @@ class MapsActivity : AppCompatActivity(), OnMapReadyCallback {
             mMap.animateCamera(CameraUpdateFactory.newLatLng(latlng));
 
             val location = LatLng(latlng.latitude, latlng.longitude)
-            mMap.addMarker(MarkerOptions().position(location).icon(generateBitmapDescriptorFromRes(this,R.drawable. marker_map12)))
+            mMap.addMarker(MarkerOptions().position(location).icon(generateBitmapDescriptorFromRes(this,
+                R.drawable.marker_map12
+            )))
 
             getAddress(latlng.latitude, latlng.longitude)
         }
@@ -158,7 +167,7 @@ class MapsActivity : AppCompatActivity(), OnMapReadyCallback {
         // 27.175297436920296, 78.04243185161019 TajMahal
 
         val address: String = addresses!![0].getAddressLine(0) // If any additional address line present than only, check with max available address lines by getMaxAddressLineIndex()
-        val sendAddress="${addresses[0].subLocality}, ${addresses[0].locality}"
+        val sendAddress="${addresses[0]?.subLocality}, ${addresses[0]?.locality}"
 
         // data passing
         val bundle = Bundle()
@@ -166,15 +175,15 @@ class MapsActivity : AppCompatActivity(), OnMapReadyCallback {
 
         val fragment = HomeDashboard()
         fragment.arguments = bundle
-        val sharedPreferences=SharedPreferences(this)
+        val sharedPreferences= SharedPreferences(this)
         sharedPreferences.saveData("myCurrentLocation", sendAddress)
 
         binding.addressText.text=address
-        val city: String = addresses[0].locality
-        val state: String = addresses[0].adminArea
-        val country: String = addresses[0].countryName
-        val postalCode: String = addresses[0].postalCode
-        val knownName: String = addresses[0].featureName
+        val city: String? = addresses[0].locality
+        val state: String? = addresses[0].adminArea
+        val country: String? = addresses[0].countryName
+        val postalCode: String? = addresses[0].postalCode
+        val knownName: String? = addresses[0].featureName
     }
 
     private fun generateBitmapDescriptorFromRes(context: Context, resId: Int): BitmapDescriptor {
