@@ -180,6 +180,7 @@
                             android:src="@drawable/ic_baseline_menu" />
 
                         <LinearLayout
+                            android:id="@+id/changeLocation"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:orientation="vertical"
@@ -193,6 +194,7 @@
                                 android:textSize="11sp" />
 
                             <TextView
+                                android:id="@+id/my_courent_location"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:text="26A, KAZHUGAPULIKADU"

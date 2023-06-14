@@ -6,7 +6,9 @@ import android.os.Bundle
 import android.util.Log
 import android.view.View
 import androidx.fragment.app.Fragment
+import androidx.navigation.NavController
 import androidx.navigation.findNavController
+import androidx.navigation.fragment.NavHostFragment
 import androidx.navigation.ui.setupWithNavController
 import com.example.horfay123.ui.SigninScreen
 import com.google.android.material.bottomnavigation.BottomNavigationView
@@ -22,8 +24,12 @@ class Dashboard : AppCompatActivity() {
         Log.e(TAG, "onCreate:")
 
 
+        val navHostFragment = supportFragmentManager.findFragmentById(R.id.fragmentContainerView) as NavHostFragment
+        val navController: NavController = navHostFragment.navController
 
-        val navController = this.findNavController(R.id.fragmentContainerView)
+       // val navController = this.findNavController(R.id.fragmentContainerView)
+
+
         // Find reference to bottom navigation view
         val navView: BottomNavigationView = findViewById(R.id.bottom_navi)
         // Hook your navigation controller to bottom navigation view

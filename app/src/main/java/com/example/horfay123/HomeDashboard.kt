@@ -2,11 +2,11 @@ package com.example.horfay123
 
 import android.content.Intent
 import android.os.Bundle
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.view.WindowManager
-import androidx.appcompat.app.AppCompatActivity
+import android.widget.ImageView
 import androidx.appcompat.widget.Toolbar
 import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
@@ -15,16 +15,21 @@ import androidx.recyclerview.widget.RecyclerView
 import com.example.horfay123.adapter.CleaningServicesAdapter
 import com.example.horfay123.databinding.FragmentHomeDashboardBinding
 import com.example.horfay123.model.CleaningSerData
+import com.google.android.material.bottomsheet.BottomSheetDialog
 import nl.psdcompany.duonavigationdrawer.views.DuoDrawerLayout
 import nl.psdcompany.duonavigationdrawer.widgets.DuoDrawerToggle
 
 class HomeDashboard : Fragment(R.layout.fragment_home_dashboard) {
     private lateinit var drawerLayout: DuoDrawerLayout
     private lateinit var toolbar: Toolbar
+    var TAG="HomeDashboard"
 
     lateinit var binding: FragmentHomeDashboardBinding
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        val locala=arguments?.getString("address123")
+        Log.e(TAG, "onCreate: $locala")
+
     }
 
     override fun onCreateView(
@@ -33,6 +38,15 @@ class HomeDashboard : Fragment(R.layout.fragment_home_dashboard) {
     ): View? {
         // Inflate the layout for this fragment
         binding = FragmentHomeDashboardBinding.inflate(inflater, container, false)
+
+        val local = savedInstanceState?.getString("address123")
+        val locala=arguments?.getString("address123")
+        Log.e(TAG, "onCreateView: $local$locala", )
+
+        val sharedPreferences=SharedPreferences(context)
+        sharedPreferences.loadData("myCurrentLocation")
+        binding.myCourentLocation.text=sharedPreferences.loadData("myCurrentLocation")
+        Log.e(TAG, "myCurrentLocation: ${sharedPreferences.loadData("myCurrentLocation")}", )
 
         toolbar = binding.toolBarDashboard
      //   (activity as AppCompatActivity).setSupportActionBar(toolbar)
@@ -70,9 +84,29 @@ class HomeDashboard : Fragment(R.layout.fragment_home_dashboard) {
             architect.setOnClickListener {
                 startActivity(Intent(activity,SubCategoriesScreen::class.java).putExtra("UNIT_ID","Architect"))
             }
+
+            changeLocation.setOnClickListener {
+                // BottomSheetDialog
+
+//                val bottomSheetDialog: BottomSheetDialog = BottomSheetDialog(this@SelectedServiceScreen,R.style.CustomBottomSheetDialogTheme)
+                val bottomSheetDialog: BottomSheetDialog = BottomSheetDialog(requireContext(),R.style.CustomBottomSheetDialogTheme)
+                val view=bottomSheetDialog.layoutInflater.inflate(R.layout.change_location_bottomscreen,null)
+
+                view.findViewById<ImageView>(R.id.map_button).setOnClickListener {
+                    startActivity(Intent(requireContext(),MapsActivity::class.java))
+                }
+                bottomSheetDialog.setContentView(view)
+                bottomSheetDialog.show()
+
+            }
+
         }
         return binding.root
 
+    }
+
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
     }
 
     private fun initDrawer() {
