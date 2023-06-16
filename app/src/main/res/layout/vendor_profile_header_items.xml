@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.google.android.material.card.MaterialCardView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <com.denzcoskun.imageslider.ImageSlider
+            android:id="@+id/image_slider"
+            android:layout_width="wrap_content"
+            android:layout_height="@dimen/dp150"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:iss_placeholder="@color/alice_blue"
+            app:iss_error_image="@drawable/default_error"
+            app:iss_selected_dot="@drawable/loadbar_selected"
+            app:iss_unselected_dot="@drawable/loadbar_unselected"
+            app:iss_auto_cycle="true"
+            app:iss_period="1000"
+            app:iss_delay="1000"
+            android:background="@drawable/slider_background"
+            app:iss_text_align="CENTER"/>
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/vendor_name"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="R Spa"
+            android:textStyle="bold"
+            android:textColor="@color/black"
+            android:textSize="@dimen/dp20"
+            android:layout_margin="@dimen/dp10"
+            app:layout_constraintTop_toBottomOf="@id/image_slider"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"/>
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/vendor_rating"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="4.8  (12k)"
+            android:textColor="@color/gray"
+            android:textSize="@dimen/sp12"
+            android:drawableStart="@drawable/star_svg"
+            android:drawablePadding="@dimen/dp10"
+            android:layout_margin="@dimen/dp10"
+            app:layout_constraintTop_toBottomOf="@id/vendor_name"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"/>
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/vendor_job"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="213 bookings this year in Jammu Surinsar Mansar Road"
+            android:drawablePadding="@dimen/dp10"
+            android:textColor="@color/gray"
+            android:textSize="@dimen/sp12"
+            android:drawableStart="@drawable/g_check_svg"
+            android:layout_margin="@dimen/dp10"
+            app:layout_constraintTop_toBottomOf="@id/vendor_rating"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"/>
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</com.google.android.material.card.MaterialCardView>

@@ -54,4 +54,22 @@ data class ListOfServiceData(
     val price: String,
     val provider_des: String
 )
+data class VendorItemData(
+    val image: Int,
+    val itemName:String
+)
+data class VendorHeaderItemData(
+    val image:Int,
+    val itemName:String,
+    val rating: String,
+    val job: String
+)data class VendorCartItemData(
+    val image:Int,
+    val mackUpName:String,
+    val amount:String,
+    val hours:String,
+    val info_one: String,
+    val info_two: String
+)
+
 

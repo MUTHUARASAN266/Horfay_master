@@ -64,4 +64,27 @@
         <item name="android:numStars">5</item>
     </style>
 
+    <style name="ImageView.Corner" parent="">
+        <item name="cornerSizeTopRight">@dimen/dp20</item>
+        <item name="cornerSizeTopLeft">@dimen/dp20</item>
+        <item name="cornerFamily">rounded</item>
+    </style>
+    <style name="CustomCardViewStyle" parent="@style/Widget.MaterialComponents.CardView">
+        <item name="shapeAppearanceOverlay">@style/ShapeAppearanceOverlay_card_custom_corners1</item>
+    </style>
+
+
+    <style name="ShapeAppearanceOverlay_card_custom_corners1" parent="">
+        <item name="cornerFamily">rounded</item>
+        <item name="cornerSizeTopRight">@dimen/dp20</item>
+        <item name="cornerSizeTopLeft">@dimen/dp20</item>
+        <item name="cornerSizeBottomRight">0dp</item>
+        <item name="cornerSizeBottomLeft">0dp</item>
+    </style>
+
+    <style name="ImageSliderStyle" parent="">
+        <item name="android:topLeftRadius">@dimen/dp10</item>
+        <item name="android:topRightRadius">@dimen/dp10</item>
+        <!-- Set the desired corner radius -->
+    </style>
 </resources>

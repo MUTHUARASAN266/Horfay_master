@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <TextView
+        android:id="@+id/demo_01"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Facial"
+        android:textColor="@color/black"
+        android:textSize="@dimen/sp20"
+        android:visibility="gone"
+        android:textStyle="bold"
+        android:layout_margin="@dimen/dp10"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"/>
+    <LinearLayout
+        android:id="@+id/layout_next1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:background="#F9F9F9"
+        app:layout_constraintTop_toBottomOf="@id/demo_01"
+        app:layout_constraintStart_toStartOf="parent"
+        >
+        <com.google.android.material.card.MaterialCardView
+            android:layout_width="@dimen/dp130"
+            android:layout_height="@dimen/dp130"
+            app:cardCornerRadius="25dp"
+            android:layout_margin="@dimen/dp10">
+            <ImageView
+                android:id="@+id/vendro_cart_image"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:scaleType="fitXY"
+                />
+        </com.google.android.material.card.MaterialCardView>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/dp10"
+            android:orientation="vertical">
+            <TextView
+                android:id="@+id/name_text"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textStyle="bold"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                android:textColor="@color/black"
+                android:text="Water Based \nMakeup"/>
+            <TextView
+                android:id="@+id/amount_text"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textStyle="bold"
+                android:layout_marginTop="@dimen/dp5"
+                android:textColor="@color/black"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/name_text"
+                android:text="₹1499 onwards"/>
+            <TextView
+                android:id="@+id/hours_text"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:drawableStart="@drawable/ellipse_23"
+                android:textColor="@color/gray"
+                android:layout_marginTop="@dimen/dp5"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/amount_text"
+                android:drawablePadding="@dimen/dp10"
+                android:text="2 hrs"/>
+            <TextView
+                android:id="@+id/info_one_text"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:drawableStart="@drawable/ellipse_23"
+                android:layout_marginTop="@dimen/dp5"
+                app:layout_constraintTop_toBottomOf="@id/hours_text"
+                app:layout_constraintStart_toStartOf="parent"
+                android:textColor="@color/gray"
+                android:drawablePadding="@dimen/dp10"
+                android:text="Includes dummy info"/>
+            <TextView
+                android:id="@+id/info_two_text"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:layout_constraintTop_toBottomOf="@id/info_one_text"
+                app:layout_constraintStart_toStartOf="parent"
+                android:drawableStart="@drawable/ellipse_23"
+                android:textColor="@color/gray"
+                android:layout_marginTop="@dimen/dp5"
+                android:drawablePadding="@dimen/dp10"
+                android:text="Includes dummy info"/>
+        </androidx.constraintlayout.widget.ConstraintLayout>
+       <androidx.appcompat.widget.AppCompatButton
+           android:layout_width="@dimen/dp75"
+           android:layout_height="@dimen/dp30"
+           android:layout_marginTop="@dimen/dp12"
+           android:elevation="@dimen/dp10"
+           android:background="@drawable/cart_btn_back"
+           android:backgroundTint="@color/white"
+           android:text="+ Add"/>
+    </LinearLayout>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

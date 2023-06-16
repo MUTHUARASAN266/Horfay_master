@@ -1,5 +1,6 @@
 package com.example.horfay123.ui
 
+import android.content.Intent
 import android.os.Bundle
 import android.view.animation.Animation
 import android.view.animation.AnimationUtils
@@ -30,6 +31,10 @@ class ServiceOfferingCardScreen : AppCompatActivity() {
         }
         binding.simpleRatingBar.setOnRatingChangeListener { ratingBar, rating, fromUser ->
             binding.ratingText.text=rating.toString()
+        }
+
+        binding.btnVendorProfile.setOnClickListener {
+            startActivity(Intent(this,VendorProfileScreen::class.java))
         }
 
     }
