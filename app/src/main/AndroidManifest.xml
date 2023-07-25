@@ -19,13 +19,56 @@
         android:theme="@style/Theme.Horfay"
         tools:targetApi="31">
         <activity
-            android:name=".ui.VendorProfileScreen"
+            android:name=".ui.ServicePageScreen"
             android:exported="false">
             <meta-data
                 android:name="android.app.lib_name"
                 android:value="" />
         </activity>
-        <!--         google.API_KEY -->
+        <activity
+            android:name=".ui.ContactUsScreen"
+            android:exported="false">
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
+        </activity>
+        <activity
+            android:name=".ui.TCnScreen"
+            android:exported="false">
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
+        </activity>
+        <activity
+            android:name=".ui.AboutUsScreen"
+            android:exported="false">
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
+        </activity>
+        <activity
+            android:name=".ui.EditProfileScreen"
+            android:exported="false"
+            android:windowSoftInputMode="adjustResize">
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
+        </activity>
+        <activity
+            android:name=".ui.ProfileScreen"
+            android:exported="false"
+            android:windowSoftInputMode="adjustResize">
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
+        </activity>
+        <activity
+            android:name=".ui.VendorProfileScreen"
+            android:exported="false">
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
+        </activity> <!-- google.API_KEY -->
         <meta-data
             android:name="com.google.android.geo.API_KEY"
             android:value="AIzaSyB-Xxu61jWYLpjLYa2UMV1coBG-_yEi97M" />
@@ -77,6 +120,9 @@
                 android:value="" />
         </activity>
         <activity
+            android:name=".HostActivity"
+            android:exported="false" />
+        <activity
             android:name=".ui.Dashboard"
             android:exported="false"
             android:windowSoftInputMode="adjustResize">
@@ -107,7 +153,8 @@
         </activity>
         <activity
             android:name=".ui.ForgotPassword"
-            android:exported="false">
+            android:exported="false"
+            android:windowSoftInputMode="adjustResize">
             <meta-data
                 android:name="android.app.lib_name"
                 android:value="" />
@@ -115,6 +162,7 @@
         <activity
             android:name=".ui.SignUpScreen"
             android:exported="false"
+            android:windowSoftInputMode="adjustResize"
             android:screenOrientation="portrait">
             <meta-data
                 android:name="android.app.lib_name"
@@ -123,7 +171,8 @@
         <activity
             android:name=".ui.SigninScreen"
             android:exported="false"
-            android:screenOrientation="portrait">
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustPan|adjustResize">
             <meta-data
                 android:name="android.app.lib_name"
                 android:value="" />

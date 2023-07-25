@@ -28,7 +28,7 @@ class ListOfServiceAdapter(private val myData: List<ListOfServiceData>,private v
         @SuppressLint("SetTextI18n")
         fun Bind(data: ListOfServiceData) {
             binding.vendorTextProviderName.text = data.provider_name
-            binding.vendorProviderImg.setImageResource(data.image)
+            data.image?.let { binding.vendorProviderImg.setImageResource(it) }
             binding.vendorTextRatingProvider.text = data.rating
             binding.vendorTextProviderJob.text = data.job
 

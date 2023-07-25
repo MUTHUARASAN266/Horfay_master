@@ -13,7 +13,7 @@ class CleaningServicesAdapter(var myData: List<CleaningSerData>) :
         RecyclerView.ViewHolder(binding.root) {
 
         fun bind(data: CleaningSerData) {
-            binding.serviceImg.setImageResource(data.image)
+            data.image?.let { binding.serviceImg.setImageResource(it) }
             binding.serviceText.text = data.name
         }
     }

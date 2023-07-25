@@ -1,0 +1,39 @@
+
+=kotlin:S125>"Remove this commented out code.(…¢éñ8¢€ÎÒ”1
+Okotlin:S1144¡"/Remove this unused private "validation" method.(“à®µ8³€ÎÒ”1
+Hkotlin:S108£")Either remove or fill this block of code.(£§Ñ8Á€ÎÒ”1
+Mkotlin:S108¥")Either remove or fill this block of code.(Ú«®®şÿÿÿÿ8Á€ÎÒ”1
+Mkotlin:S108§")Either remove or fill this block of code.(áıŸùÿÿÿÿ8Â€ÎÒ”1
+Gkotlin:S108©")Either remove or fill this block of code.(„ç©}8Â€ÎÒ”1
+Mkotlin:S108«")Either remove or fill this block of code.(Õğ“Œûÿÿÿÿ8Â€ÎÒ”1
+Mkotlin:S108­")Either remove or fill this block of code.(œ±×Ôúÿÿÿÿ8Ã€ÎÒ”1
+Gkotlin:S108¯")Either remove or fill this block of code.(úç»?8Ã€ÎÒ”1
+Hkotlin:S108±")Either remove or fill this block of code.(å¥‡8Ä€ÎÒ”1
+mkotlin:S1871ï"MThis branch's code block is the same as the block for the branch on line 233.(ÄÜÚ£8ã€ÎÒ”1
+mkotlin:S1871õ"MThis branch's code block is the same as the block for the branch on line 233.(Í‘©²8ã€ÎÒ”1
+mkotlin:S1871û"MThis branch's code block is the same as the block for the branch on line 233.(‹ŒŸ¤8ä€ÎÒ”1
+mkotlin:S1871"MThis branch's code block is the same as the block for the branch on line 233.(â›ÎÒ8ä€ÎÒ”1
+rkotlin:S1871‡"MThis branch's code block is the same as the block for the branch on line 233.(âÒÕ÷ûÿÿÿÿ8ä€ÎÒ”1
+mkotlin:S1871“"MThis branch's code block is the same as the block for the branch on line 269.(³Ï™İ8ä€ÎÒ”1
+mkotlin:S1871™"MThis branch's code block is the same as the block for the branch on line 269.(Á‡Ëá8ä€ÎÒ”1
+lkotlin:S1871Ÿ"MThis branch's code block is the same as the block for the branch on line 269.(îí%8ä€ÎÒ”1
+mkotlin:S1871¥"MThis branch's code block is the same as the block for the branch on line 269.(Ú¸Îä8ä€ÎÒ”1
+mkotlin:S1871«"MThis branch's code block is the same as the block for the branch on line 269.(Ê³éè8å€ÎÒ”1
+Ckotlin:S1874î"#Deprecated code should not be used.(Õ¼±8æ€ÎÒ”1
+Ckotlin:S1874ô"#Deprecated code should not be used.(Õ¼±8æ€ÎÒ”1
+Ckotlin:S1874ú"#Deprecated code should not be used.(Õ¼±8æ€ÎÒ”1
+Ckotlin:S1874€"#Deprecated code should not be used.(Õ¼±8æ€ÎÒ”1
+Ckotlin:S1874†"#Deprecated code should not be used.(Õ¼±8æ€ÎÒ”1
+Ckotlin:S1874Œ"#Deprecated code should not be used.(Õ¼±8æ€ÎÒ”1
+Ckotlin:S1874’"#Deprecated code should not be used.(øç–©8æ€ÎÒ”1
+Ckotlin:S1874˜"#Deprecated code should not be used.(øç–©8æ€ÎÒ”1
+Ckotlin:S1874"#Deprecated code should not be used.(øç–©8æ€ÎÒ”1
+Ckotlin:S1874¤"#Deprecated code should not be used.(øç–©8æ€ÎÒ”1
+Ckotlin:S1874ª"#Deprecated code should not be used.(øç–©8æ€ÎÒ”1
+Ckotlin:S1874°"#Deprecated code should not be used.(øç–©8æ€ÎÒ”1
+rkotlin:S3776á"RRefactor this method to reduce its Cognitive Complexity from 18 to the 15 allowed.(øØªÃ8é€ÎÒ”1
+zkotlin:S1186Ï"ZAdd a nested comment explaining why this function is empty or complete the implementation.(˜èèï8ğ€ÎÒ”1
+zkotlin:S1186ä"ZAdd a nested comment explaining why this function is empty or complete the implementation.(´„˜8ğ€ÎÒ”1
+]kotlin:S6511£"=Merge chained "if" statements into a single "when" statement.(£§Ñ8ó€ÎÒ”1
+]kotlin:S6511é"=Merge chained "if" statements into a single "when" statement.(…ºÉ8ó€ÎÒ”1
+{kotlin:S3923£"[Remove this conditional structure or edit its code blocks so that they're not all the same.(£§Ñ8õ€ÎÒ”1

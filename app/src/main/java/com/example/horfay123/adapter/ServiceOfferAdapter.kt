@@ -28,7 +28,7 @@ class ServiceOfferAdapter(
         }
 
         fun bind(data: ServiceOfferData) {
-            binding.imageView.setImageResource(data.image)
+            data.image?.let { binding.imageView.setImageResource(it) }
             binding.textName.text = data.name
             binding.addButtonService.isChecked=data.isChecked
             binding.addButtonService.isChecked = myData[position].isChecked

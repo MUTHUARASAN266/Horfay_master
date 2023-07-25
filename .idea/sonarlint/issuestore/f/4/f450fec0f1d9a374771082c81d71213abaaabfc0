@@ -1,0 +1,26 @@
+
+=kotlin:S1251"Remove this commented out code.(–±Ù8»÷Ãí”1
+=kotlin:S125F"Remove this commented out code.(Ï«üö8½÷Ãí”1
+Bkotlin:S125n"Remove this commented out code.(ƒÅıÿÿÿÿ8Ã÷Ãí”1
+=kotlin:S125z"Remove this commented out code.(ÑÜÃ«8ó÷Ãí”1
+>kotlin:S125…"Remove this commented out code.(ÑÜÃ«8ô÷Ãí”1
+>kotlin:S125š"Remove this commented out code.(Æ¦Ú‹8ö÷Ãí”1
+Ckotlin:S125‰"Remove this commented out code.(ƒÅıÿÿÿÿ8ø÷Ãí”1
+>kotlin:S125—"Remove this commented out code.(ÑÜÃ«8ù÷Ãí”1
+>kotlin:S125¡"Remove this commented out code.(ÑÜÃ«8ú÷Ãí”1
+>kotlin:S125¯"Remove this commented out code.(Æ¦Ú‹8û÷Ãí”1
+Pkotlin:S1144Ğ"0Remove this unused private "buttonColor" method.(ñú‚¸8’øÃí”1
+Kkotlin:S1144ó",Remove this unused private "apiCall" method.(Ç´µ^8àøÃí”1
+Ykotlin:S1144Ä"4Remove this unused private "checkPermission" method.(ˆ»Ú”øÿÿÿÿ8âøÃí”1
+xkotlin:S1192["YDefine a constant instead of duplicating this literal "email and password empty" 4 times.(ñûæ”8ÕùÃí”1
+mkotlin:S1871©"MThis branch's code block is the same as the block for the branch on line 165.(ÍÉÜî8†úÃí”1
+mkotlin:S1871±"MThis branch's code block is the same as the block for the branch on line 173.(Ñó‘Û8†úÃí”1
+Ckotlin:S1874¨"#Deprecated code should not be used.(¼­‘ì8ŠúÃí”1
+Ckotlin:S1874¬"#Deprecated code should not be used.(¼­‘ì8ŠúÃí”1
+Hkotlin:S1874°"#Deprecated code should not be used.(ÒàÛÂùÿÿÿÿ8ŠúÃí”1
+Hkotlin:S1874´"#Deprecated code should not be used.(ÒàÛÂùÿÿÿÿ8ŠúÃí”1
+Ckotlin:S1874Õ"#Deprecated code should not be used.(¼­‘ì8ŠúÃí”1
+Hkotlin:S1874Ù"#Deprecated code should not be used.(´…Ğşÿÿÿÿ8ŠúÃí”1
+vkotlin:S3776!"RRefactor this method to reduce its Cognitive Complexity from 18 to the 15 allowed.(¶Á»¬şÿÿÿÿ8ºúÃí”1
+zkotlin:S1186¡"ZAdd a nested comment explaining why this function is empty or complete the implementation.(´„˜8çúÃí”1
+bkotlin:S6511¥"=Merge chained "if" statements into a single "when" statement.(…Ê…Ğıÿÿÿÿ8ìúÃí”1

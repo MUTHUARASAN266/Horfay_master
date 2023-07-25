@@ -12,7 +12,7 @@ class VendorItemAdapter(private val myData: List<VendorItemData>):RecyclerView.A
         RecyclerView.ViewHolder(binding.root){
 
             fun bind(myData: VendorItemData){
-                binding.vendorItemImg.setImageResource(myData.image)
+                myData.image?.let { binding.vendorItemImg.setImageResource(it) }
                 binding.vendoritemText.text=myData.itemName
             }
     }

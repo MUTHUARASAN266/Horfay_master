@@ -1,0 +1,378 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ui.EditProfileScreen">
+
+    <com.google.android.material.appbar.AppBarLayout
+        android:id="@+id/appbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/transparent"
+        app:elevation="1dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <com.google.android.material.appbar.MaterialToolbar
+            android:layout_width="match_parent"
+            android:layout_height="56dp">
+
+            <ImageView
+                android:id="@+id/back_button"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/back_press_icon" />
+
+            <TextView
+                android:id="@+id/text_view_appbar"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:text="Edit Profile"
+                android:fontFamily="@font/inter_bold"
+                android:textAlignment="center"
+                android:textColor="#161616"
+                android:textSize="@dimen/sp20"
+                android:textStyle="bold" />
+        </com.google.android.material.appbar.MaterialToolbar>
+    </com.google.android.material.appbar.AppBarLayout>
+
+    <View
+        android:id="@+id/space_01"
+        android:layout_width="0dp"
+        android:layout_height="@dimen/dp20"
+        app:layout_constraintEnd_toEndOf="@id/guideline_end"
+        app:layout_constraintStart_toStartOf="@id/guideline_start"
+        app:layout_constraintTop_toBottomOf="@id/appbar" />
+
+    <TextView
+        android:id="@+id/textview_firstname"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/inter"
+        android:text="First Name"
+        android:textColor="@color/black"
+        android:textSize="@dimen/sp16"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="@id/guideline_end"
+        app:layout_constraintStart_toStartOf="@id/guideline_start"
+        app:layout_constraintTop_toBottomOf="@id/space_01" />
+
+    <View
+        android:id="@+id/space_2"
+        android:layout_width="0dp"
+        android:layout_height="@dimen/dp10"
+        app:layout_constraintEnd_toEndOf="@id/guideline_end"
+        app:layout_constraintStart_toStartOf="@id/guideline_start"
+        app:layout_constraintTop_toBottomOf="@id/textview_firstname" />
+
+    <androidx.appcompat.widget.AppCompatEditText
+        android:id="@+id/pr_ed_fr_name"
+        android:layout_width="0dp"
+        android:layout_height="@dimen/dp55"
+        android:background="@drawable/singin_back"
+        android:gravity="center|start"
+        android:hint="muthu"
+        android:ems="10"
+        android:imeOptions="actionNext"
+        android:inputType="textPersonName"
+        android:paddingStart="@dimen/dp10"
+        android:textColorHint="@color/gray"
+        android:textCursorDrawable="@null"
+        android:textColor="#161616"
+        android:textSize="@dimen/sp16"
+        app:layout_constraintEnd_toEndOf="@id/guideline_end"
+        app:layout_constraintStart_toStartOf="@id/guideline_start"
+        app:layout_constraintTop_toBottomOf="@id/space_2" />
+
+    <View
+        android:id="@+id/space_3"
+        android:layout_width="0dp"
+        android:layout_height="@dimen/dp10"
+        app:layout_constraintEnd_toEndOf="@id/guideline_end"
+        app:layout_constraintStart_toStartOf="@id/guideline_start"
+        app:layout_constraintTop_toBottomOf="@id/pr_ed_fr_name" />
+
+    <TextView
+        android:id="@+id/textview_lastname"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/inter"
+        android:text="Last Name"
+        android:textColor="@color/black"
+        android:textSize="@dimen/sp16"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="@id/guideline_end"
+        app:layout_constraintStart_toStartOf="@id/guideline_start"
+        app:layout_constraintTop_toBottomOf="@id/space_3" />
+
+    <View
+        android:id="@+id/space_4"
+        android:layout_width="0dp"
+        android:layout_height="@dimen/dp10"
+        app:layout_constraintEnd_toEndOf="@id/guideline_end"
+        app:layout_constraintStart_toStartOf="@id/guideline_start"
+        app:layout_constraintTop_toBottomOf="@id/textview_lastname" />
+
+    <androidx.appcompat.widget.AppCompatEditText
+        android:id="@+id/pr_ed_laname"
+        android:layout_width="0dp"
+        android:layout_height="@dimen/dp55"
+        android:background="@drawable/singin_back"
+        android:gravity="center|start"
+        android:paddingStart="@dimen/dp10"
+        android:ems="10"
+        android:imeOptions="actionNext"
+        android:inputType="textPersonName"
+        android:hint="arasan"
+        android:textColorHint="@color/gray"
+        android:textCursorDrawable="@null"
+        android:textColor="#161616"
+        android:textSize="@dimen/sp16"
+        app:layout_constraintEnd_toEndOf="@id/guideline_end"
+        app:layout_constraintStart_toStartOf="@id/guideline_start"
+        app:layout_constraintTop_toBottomOf="@id/space_4" />
+
+    <View
+        android:id="@+id/space_5"
+        android:layout_width="0dp"
+        android:layout_height="@dimen/dp10"
+        app:layout_constraintEnd_toEndOf="@id/guideline_end"
+        app:layout_constraintStart_toStartOf="@id/guideline_start"
+        app:layout_constraintTop_toBottomOf="@id/pr_ed_laname" />
+
+    <TextView
+        android:id="@+id/textview_email"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/inter"
+        android:text="Email"
+        android:textColor="#161616"
+        android:textSize="@dimen/sp16"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="@id/guideline_end"
+        app:layout_constraintStart_toStartOf="@id/guideline_start"
+        app:layout_constraintTop_toBottomOf="@id/space_5" />
+
+    <View
+        android:id="@+id/space_6"
+        android:layout_width="0dp"
+        android:layout_height="@dimen/dp10"
+        app:layout_constraintEnd_toEndOf="@id/guideline_end"
+        app:layout_constraintStart_toStartOf="@id/guideline_start"
+        app:layout_constraintTop_toBottomOf="@id/textview_email" />
+
+    <androidx.appcompat.widget.AppCompatEditText
+        android:id="@+id/pr_ed_email"
+        android:layout_width="0dp"
+        android:layout_height="@dimen/dp55"
+        android:background="@drawable/singin_back"
+        android:gravity="center|start"
+        android:hint="km.arasankpk266@gmail.com"
+        android:ems="10"
+        android:imeOptions="actionNext"
+        android:inputType="textEmailAddress"
+        android:paddingStart="@dimen/dp10"
+        android:textColorHint="@color/gray"
+        android:textCursorDrawable="@null"
+        android:textColor="#161616"
+        android:textSize="@dimen/sp16"
+        app:layout_constraintEnd_toEndOf="@id/guideline_end"
+        app:layout_constraintStart_toStartOf="@id/guideline_start"
+        app:layout_constraintTop_toBottomOf="@id/space_6" />
+
+    <View
+        android:id="@+id/space_7"
+        android:layout_width="0dp"
+        android:layout_height="@dimen/dp10"
+        app:layout_constraintEnd_toEndOf="@id/guideline_end"
+        app:layout_constraintStart_toStartOf="@id/guideline_start"
+        app:layout_constraintTop_toBottomOf="@id/pr_ed_email" />
+
+    <TextView
+        android:id="@+id/textview_number"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/inter"
+        android:text="Phone Number"
+        android:textColor="@color/black"
+        android:textSize="@dimen/sp16"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="@id/guideline_end"
+        app:layout_constraintStart_toStartOf="@id/guideline_start"
+        app:layout_constraintTop_toBottomOf="@id/space_7" />
+
+    <View
+        android:id="@+id/space_8"
+        android:layout_width="0dp"
+        android:layout_height="@dimen/dp10"
+        app:layout_constraintEnd_toEndOf="@id/guideline_end"
+        app:layout_constraintStart_toStartOf="@id/guideline_start"
+        app:layout_constraintTop_toBottomOf="@id/textview_number" />
+
+    <androidx.appcompat.widget.AppCompatEditText
+        android:id="@+id/pr_ed_phone_number"
+        android:layout_width="0dp"
+        android:layout_height="@dimen/dp55"
+        android:background="@drawable/singin_back"
+        android:gravity="start|center"
+        android:hint="+91 82201 89947"
+        android:ems="10"
+        android:imeOptions="actionNext"
+        android:inputType="phone"
+        android:paddingStart="@dimen/dp10"
+        android:textColorHint="@color/gray"
+        android:textCursorDrawable="@null"
+        android:textColor="#161616"
+        android:textSize="@dimen/sp16"
+        app:layout_constraintEnd_toEndOf="@id/guideline_end"
+        app:layout_constraintStart_toStartOf="@id/guideline_start"
+        app:layout_constraintTop_toBottomOf="@id/space_8" />
+
+    <View
+        android:id="@+id/space_9"
+        android:layout_width="0dp"
+        android:layout_height="@dimen/dp10"
+        app:layout_constraintEnd_toEndOf="@id/guideline_end"
+        app:layout_constraintStart_toStartOf="@id/guideline_start"
+        app:layout_constraintTop_toBottomOf="@id/pr_ed_phone_number" />
+
+    <TextView
+        android:id="@+id/textview_country"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/inter"
+        android:text="Country"
+        android:textColor="@color/black"
+        android:textSize="@dimen/sp16"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="@id/guideline_end"
+        app:layout_constraintStart_toStartOf="@id/guideline_start"
+        app:layout_constraintTop_toBottomOf="@id/space_9" />
+
+    <View
+        android:id="@+id/space_10"
+        android:layout_width="0dp"
+        android:layout_height="@dimen/dp10"
+        app:layout_constraintEnd_toEndOf="@id/guideline_end"
+        app:layout_constraintStart_toStartOf="@id/guideline_start"
+        app:layout_constraintTop_toBottomOf="@id/textview_country" />
+
+    <androidx.appcompat.widget.AppCompatEditText
+        android:id="@+id/pr_ed_country"
+        android:layout_width="0dp"
+        android:layout_height="@dimen/dp55"
+        android:background="@drawable/singin_back"
+        android:gravity="start|center"
+        android:hint="india"
+        android:ems="10"
+        android:imeOptions="actionNext"
+        android:inputType="textPersonName"
+        android:paddingStart="@dimen/dp10"
+        android:textColorHint="@color/gray"
+        android:textCursorDrawable="@null"
+        android:textColor="#161616"
+        android:textSize="@dimen/sp16"
+        app:layout_constraintEnd_toEndOf="@id/guideline_end"
+        app:layout_constraintStart_toStartOf="@id/guideline_start"
+        app:layout_constraintTop_toBottomOf="@id/space_10" />
+
+    <View
+        android:id="@+id/space_11"
+        android:layout_width="0dp"
+        android:layout_height="@dimen/dp10"
+        app:layout_constraintEnd_toEndOf="@id/guideline_end"
+        app:layout_constraintStart_toStartOf="@id/guideline_start"
+        app:layout_constraintTop_toBottomOf="@id/pr_ed_country" />
+
+    <TextView
+        android:id="@+id/textview_city"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/inter"
+        android:text="City"
+        android:textColor="@color/black"
+        android:textSize="@dimen/sp16"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="@id/guideline_end"
+        app:layout_constraintStart_toStartOf="@id/guideline_start"
+        app:layout_constraintTop_toBottomOf="@id/space_11" />
+
+    <View
+        android:id="@+id/space_12"
+        android:layout_width="0dp"
+        android:layout_height="@dimen/dp10"
+        app:layout_constraintEnd_toEndOf="@id/guideline_end"
+        app:layout_constraintStart_toStartOf="@id/guideline_start"
+        app:layout_constraintTop_toBottomOf="@id/textview_city" />
+
+    <androidx.appcompat.widget.AppCompatEditText
+        android:id="@+id/pr_ed_city"
+        android:layout_width="0dp"
+        android:layout_height="@dimen/dp55"
+        android:background="@drawable/singin_back"
+        android:gravity="start|center"
+        android:hint="Chennai"
+        android:ems="10"
+        android:imeOptions="actionDone"
+        android:inputType="textPersonName"
+        android:paddingStart="@dimen/dp10"
+        android:textColorHint="@color/gray"
+        android:textCursorDrawable="@null"
+        android:textColor="#161616"
+        android:textSize="@dimen/sp16"
+        app:layout_constraintEnd_toEndOf="@id/guideline_end"
+        app:layout_constraintStart_toStartOf="@id/guideline_start"
+        app:layout_constraintTop_toBottomOf="@id/space_12" />
+
+    <View
+        android:id="@+id/space_13"
+        android:layout_width="0dp"
+        android:layout_height="@dimen/dp5"
+        app:layout_constraintEnd_toEndOf="@id/guideline_end"
+        app:layout_constraintStart_toStartOf="@id/guideline_start"
+        app:layout_constraintTop_toBottomOf="@id/pr_ed_city" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/edit_btn"
+        android:layout_width="0dp"
+        android:layout_height="@dimen/dp55"
+        android:background="@drawable/singin_back"
+        android:text="Save"
+        app:layout_constraintEnd_toEndOf="@id/guideline_end"
+        app:layout_constraintStart_toStartOf="@id/guideline_start"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/space_13" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline_start"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.05" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline_end"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.95" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline_top"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.1" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline_bottom"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.97" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

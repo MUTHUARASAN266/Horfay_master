@@ -21,7 +21,7 @@ class SubCatAdapter(
         }
 
         fun bind(myData: SubCatData) {
-            binding.subImg.setImageResource(myData.image)
+            myData.image?.let { binding.subImg.setImageResource(it) }
             binding.subText.text = myData.name
         }
     }

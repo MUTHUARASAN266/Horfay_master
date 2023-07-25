@@ -98,4 +98,11 @@ dependencies {
 
     // slider Image
     implementation 'com.github.denzcoskun:ImageSlideshow:0.1.2'
+
+    // sendbird sdk uikit
+ //   implementation 'com.sendbird.sdk:uikit:3.6.0'
+
+    // sendbird sdk
+ //   implementation 'com.sendbird.sdk:sendbird-android-sdk:3.1.18'
+
 }

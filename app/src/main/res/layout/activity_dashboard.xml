@@ -129,10 +129,6 @@
         app:navGraph="@navigation/nav_graph" />
 
 
-
-
-
-
     <com.google.android.material.bottomnavigation.BottomNavigationView
         android:id="@+id/bottom_navi"
         android:layout_width="match_parent"
@@ -140,6 +136,7 @@
         android:background="@color/white"
         android:scrollIndicators="left"
         app:elevation="5dp"
+        android:visibility="gone"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"

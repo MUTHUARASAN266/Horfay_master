@@ -34,7 +34,7 @@ class ForgotPassword : AppCompatActivity() {
         }
 
     }
-    fun textChanger(){
+    private fun textChanger(){
         textWatcher = object : TextWatcher{
             override fun beforeTextChanged(p0: CharSequence?, p1: Int, p2: Int, p3: Int) {
 
@@ -56,12 +56,13 @@ class ForgotPassword : AppCompatActivity() {
             binding.buttonResetPassword.backgroundTintList=ContextCompat.getColorStateList(this@ForgotPassword,
                 R.color.button_back
             )
-            binding.buttonResetPassword.setTextColor(resources.getColor(R.color.black))
+
+            binding.buttonResetPassword.setTextColor(ContextCompat.getColor(this,R.color.black))
         }else{
             binding.buttonResetPassword.backgroundTintList=ContextCompat.getColorStateList(this@ForgotPassword,
                 R.color.black
             )
-            binding.buttonResetPassword.setTextColor(resources.getColor(R.color.white))
+            binding.buttonResetPassword.setTextColor(ContextCompat.getColor(this,R.color.white))
         }
     }
 

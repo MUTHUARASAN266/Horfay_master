@@ -149,6 +149,7 @@
     <color name="transparent">#00000000</color>
     <color name="text_color_password">#0D0140</color>
     <color name="button_back">#F5F5F5</color>
-
+    <color name="space_cadet">#172B4D</color>
     <color name="cardBackground">@color/ghost_white</color>
+    <color name="night_blue">#150B3D</color>
 </resources>

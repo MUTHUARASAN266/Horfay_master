@@ -21,7 +21,7 @@ class AllCategoriesAdapter(
         }
 
         fun bind(mydata: AllCatData) {
-            binding.catImg1.setImageResource(mydata.image)
+            mydata.image?.let { binding.catImg1.setImageResource(it) }
             binding.catText1.text = mydata.name
             /*binding.catImg2.setImageResource(mydata.image)
             binding.catText2.text=mydata.name

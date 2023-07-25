@@ -56,6 +56,7 @@ class LoginRepository(val apiService: ApiService) {
             }
         } catch (e: Exception) {
             Log.e(TAG, "muthuLog: ${e.message}")
+            val edata=e.message.toString()
             LoginResult.Error("${e.message}")
         }
 

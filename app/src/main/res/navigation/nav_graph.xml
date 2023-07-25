@@ -25,5 +25,10 @@
         android:name="com.example.horfay123.ui.NotificationFragment"
         android:label="fragment_notification"
         tools:layout="@layout/fragment_notification" />
+    <fragment
+        android:id="@+id/chartFragmentScreen"
+        android:name="com.example.horfay123.ChatScreen"
+        android:label="fragment_chat_screen"
+        tools:layout="@layout/fragment_chat_screen" />
 
 </navigation>

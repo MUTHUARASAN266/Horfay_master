@@ -34,7 +34,6 @@ class AllCategories : Fragment(R.layout.fragment_all_categories), UnitClickListe
         binding.apply {
             backArrow.setOnClickListener {
                 this@AllCategories.findNavController().popBackStack()
-
             }
 
             //allCategoriesRecyclerview.layoutManager=GridLayoutManager(context,RecyclerView.VERTICAL,false)

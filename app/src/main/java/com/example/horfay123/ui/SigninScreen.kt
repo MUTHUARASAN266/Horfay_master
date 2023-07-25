@@ -4,10 +4,14 @@ import LoginResult
 import android.annotation.SuppressLint
 import android.content.Intent
 import android.content.pm.PackageManager
+import android.os.Build
 import android.os.Bundle
+import android.os.Handler
 import android.text.Editable
 import android.text.TextWatcher
 import android.util.Log
+import android.view.WindowInsets
+import android.view.WindowManager
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.app.ActivityCompat
@@ -35,6 +39,17 @@ class SigninScreen : AppCompatActivity() {
         Log.d(TAG, "onCreate: ")
         binding = ActivitySigninScreenBinding.inflate(layoutInflater)
         setContentView(binding.root)
+
+        binding.root.setOnApplyWindowInsetsListener { _, windowInsets ->
+            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.R) {
+                val imeHeight = windowInsets.getInsets(WindowInsets.Type.ime()).bottom
+                binding.root.setPadding(0, 0, 0, imeHeight)
+                val insets = windowInsets.getInsets(WindowInsets.Type.ime() or WindowInsets.Type.systemGestures())
+                insets
+            }
+
+            windowInsets
+        }
 
         val retrofitService = NetworkService.create()
         val mainRepository = LoginRepository(retrofitService)
@@ -78,12 +93,15 @@ class SigninScreen : AppCompatActivity() {
 
            }
        }*/
+            textview1.setOnClickListener {
+                startActivity(Intent(this@SigninScreen, HostActivity::class.java))
+            }
 
             textviewForgotPassword?.setOnClickListener {
                 startActivity(Intent(this@SigninScreen, ForgotPassword::class.java))
             }
             signinButtton.setOnClickListener {
-                val countryCode= countryCodePicker?.selectedCountryCodeWithPlus
+                val countryCode = countryCodePicker?.selectedCountryCodeWithPlus
                 if (editTextPhone?.text!!.isEmpty()) {
                     it.snack("email and password empty", 2000)
                     Log.e(TAG, "email empty")
@@ -94,7 +112,7 @@ class SigninScreen : AppCompatActivity() {
                     Log.e(TAG, "countryCode: ${countryCode + editTextPhone.text.toString()}")
                     CoroutineScope(Dispatchers.Main).launch {
                         loginViewModel.userLogin(
-                            countryCode+editTextPhone.text.toString().trim(),
+                            countryCode + editTextPhone.text.toString().trim(),
                             editeTextPassword.text.toString().trim(),
                             "User",
                             "d3tza_BTQeCEbis8q023Pr:APA91bGzbT8XaMOMLVH2ozX8sFV-uvLLxjQIHBl-TMq5NITmyi02GHcNQdiGHN93ePztpaRWiIbUjHuAcNY7r41Fj9Uq09hsXYJFNYV4El_kA9jmnZczsamfDB_dUUo7fjfCv86YmEj0"
@@ -106,15 +124,44 @@ class SigninScreen : AppCompatActivity() {
                                     is LoginResult.Success -> {
                                         // Log.e(TAG, "onCreate: login")
                                         //Log.e(TAG, "onCreate: login-->${loginResult.token?.message}")
-                                      //  Log.e(TAG, "onCreate: login-->${loginResult.token?.details?.username}")
-                                        Log.e(TAG, "onCreate: login-->${loginResult.token?.details?.username}")
-                                        it.snack("${loginResult.token?.message}", 2000)
+                                        //  Log.e(TAG, "onCreate: login-->${loginResult.token?.details?.username}")
+                                        Log.e(
+                                            TAG,
+                                            "onCreate: login-->${loginResult.token?.details?.username}"
+                                        )
+                                        val sharedPreferences = SharedPreferences(this@SigninScreen)
+                                        sharedPreferences.saveData(
+                                            "u_firstName",
+                                            loginResult.token?.details?.firstName as String
+                                        )
+                                        sharedPreferences.saveData(
+                                            "u_lastName",
+                                            loginResult.token.details.lastName as String
+                                        )
+                                        sharedPreferences.saveData(
+                                            "u_email",
+                                            loginResult.token.details.email as String
+                                        )
+                                        sharedPreferences.saveData(
+                                            "u_phoneNumber",
+                                            loginResult.token.details.phoneNumber as String
+                                        )
+                                        sharedPreferences.saveData(
+                                            "u_country",
+                                            loginResult.token.details.country as String
+                                        )
+                                        sharedPreferences.saveData(
+                                            "u_city",
+                                            loginResult.token.details.city as String
+                                        )
+                                        it.snack(loginResult.token.status, 2000)
                                         startActivity(
                                             Intent(
                                                 this@SigninScreen,
                                                 Dashboard::class.java
                                             )
                                         )
+
                                         loginViewModel.complete()
                                         // myViewModel.jobStop()
                                     }
@@ -162,19 +209,39 @@ class SigninScreen : AppCompatActivity() {
                 if (binding.editTextPhone?.text!!.isEmpty()) {
                     binding.signinButtton.backgroundTintList =
                         ContextCompat.getColorStateList(this@SigninScreen, R.color.button_back)
-                    binding.signinButtton.setTextColor(resources.getColor(R.color.black))
+                    binding.signinButtton.setTextColor(
+                        ContextCompat.getColor(
+                            this@SigninScreen,
+                            R.color.black
+                        )
+                    )
                 } else if (binding.editeTextPassword?.text!!.isEmpty()) {
                     binding.signinButtton.backgroundTintList =
                         ContextCompat.getColorStateList(this@SigninScreen, R.color.button_back)
-                    binding.signinButtton.setTextColor(resources.getColor(R.color.black))
+                    binding.signinButtton.setTextColor(
+                        ContextCompat.getColor(
+                            this@SigninScreen,
+                            R.color.black
+                        )
+                    )
                 } else if (binding.editTextPhone?.text!!.isNotEmpty()) {
                     binding.signinButtton.backgroundTintList =
                         ContextCompat.getColorStateList(this@SigninScreen, R.color.black)
-                    binding.signinButtton.setTextColor(resources.getColor(R.color.white))
+                    binding.signinButtton.setTextColor(
+                        ContextCompat.getColor(
+                            this@SigninScreen,
+                            R.color.white
+                        )
+                    )
                 } else if (binding.editeTextPassword?.text!!.isNotEmpty()) {
                     binding.signinButtton.backgroundTintList =
                         ContextCompat.getColorStateList(this@SigninScreen, R.color.black)
-                    binding.signinButtton.setTextColor(resources.getColor(R.color.white))
+                    binding.signinButtton.setTextColor(
+                        ContextCompat.getColor(
+                            this@SigninScreen,
+                            R.color.white
+                        )
+                    )
                 }
             }
 
@@ -189,7 +256,10 @@ class SigninScreen : AppCompatActivity() {
                     binding.editTextPhone!!.setSelection(pos)
 
                 } else if (count >= inputlength && (inputlength == 5)) {
-                    binding.editTextPhone!!.setText(binding.editTextPhone!!.text.toString().substring(0, binding.editTextPhone!!.text.toString().length - 1))
+                    binding.editTextPhone!!.setText(
+                        binding.editTextPhone!!.text.toString()
+                            .substring(0, binding.editTextPhone!!.text.toString().length - 1)
+                    )
 
                     val pos: Int = binding.editTextPhone!!.text!!.length
                     binding.editTextPhone!!.setSelection(pos);
@@ -207,11 +277,16 @@ class SigninScreen : AppCompatActivity() {
             if (editTextPhone?.text!!.isEmpty() && editeTextPassword?.text!!.isEmpty()) {
                 binding.signinButtton.backgroundTintList =
                     ContextCompat.getColorStateList(this@SigninScreen, R.color.white)
-                binding.signinButtton.setTextColor(resources.getColor(R.color.black))
+                binding.signinButtton.setTextColor(
+                    ContextCompat.getColor(
+                        this@SigninScreen,
+                        R.color.black
+                    )
+                )
             } else {
                 signinButtton.backgroundTintList =
                     ContextCompat.getColorStateList(this@SigninScreen, R.color.black)
-                signinButtton.setTextColor(resources.getColor(R.color.white))
+                signinButtton.setTextColor(ContextCompat.getColor(this@SigninScreen, R.color.white))
             }
         }
     }

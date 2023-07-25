@@ -1,0 +1,218 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    tools:context=".ui.TCnScreen">
+
+    <com.google.android.material.appbar.AppBarLayout
+        android:id="@+id/appbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/transparent"
+        app:elevation="1dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <com.google.android.material.appbar.MaterialToolbar
+            android:layout_width="match_parent"
+            android:layout_height="56dp">
+
+            <ImageView
+                android:id="@+id/back_button"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/back_press_icon" />
+
+            <TextView
+                android:id="@+id/text_view_appbar"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:text="Terms and Conditions"
+                android:textAlignment="center"
+                android:textColor="#161616"
+                android:textSize="@dimen/sp20"
+                android:textStyle="bold" />
+        </com.google.android.material.appbar.MaterialToolbar>
+    </com.google.android.material.appbar.AppBarLayout>
+
+    <TextView
+        android:id="@+id/textview_tcn1"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="1. ACCEPTANCE THE USE OF LOREM IPSUM TERMS AND CONDITIONS"
+        android:textColor="@color/night_blue"
+        android:textSize="@dimen/sp10"
+        android:textStyle="bold"
+        android:layout_margin="@dimen/dp10"
+        app:layout_constraintStart_toStartOf="@id/guideline_start"
+        app:layout_constraintEnd_toEndOf="@id/guideline_end"
+        app:layout_constraintTop_toBottomOf="@id/appbar" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/textview_tcn2"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/sp10"
+        android:text="@string/tcn_text1"
+        android:textColor="@color/gray"
+        android:textSize="@dimen/sp11"
+        android:fontFamily="@font/inter"
+        android:layout_marginTop="@dimen/dp5"
+        app:layout_constraintEnd_toEndOf="@id/guideline_end"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@id/guideline_start"
+        app:layout_constraintTop_toBottomOf="@id/textview_tcn1" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/textview_tcn3"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toStartOf="@id/guideline_start"
+        app:layout_constraintEnd_toEndOf="@id/guideline_end"
+        app:layout_constraintTop_toBottomOf="@id/textview_tcn2"
+        android:text="2.LEGAL ADVICE"
+        android:fontFamily="@font/inter"
+        android:textStyle="bold"
+        android:textSize="@dimen/sp11"
+        android:layout_margin="@dimen/dp10"
+        android:textColor="@color/night_blue"/>
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/textview_tcn4"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="@string/tcn_text2"
+        android:textColor="@color/gray"
+        android:textSize="@dimen/sp11"
+        android:fontFamily="@font/inter"
+        android:layout_marginTop="@dimen/dp5"
+        android:layout_marginStart="@dimen/sp10"
+        app:layout_constraintStart_toStartOf="@id/guideline_start"
+        app:layout_constraintEnd_toEndOf="@id/guideline_end"
+        app:layout_constraintTop_toBottomOf="@id/textview_tcn3"/>
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/textview_tcn5"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/dp10"
+        android:textColor="@color/night_blue"
+        android:textStyle="bold"
+        android:textSize="@dimen/sp11"
+        android:fontFamily="@font/inter"
+        android:text="3.LINKS TO AND FROM OTHER APPS AND WEBSITES"
+        app:layout_constraintTop_toBottomOf="@id/textview_tcn4"
+        app:layout_constraintStart_toStartOf="@id/guideline_start"
+        app:layout_constraintEnd_toEndOf="@id/guideline_end"/>
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/textview_tcn6"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/dp10"
+        android:textSize="@dimen/sp11"
+        android:textColor="@color/gray"
+        android:text="@string/tcn_text3"
+        android:layout_marginTop="@dimen/dp5"
+        android:fontFamily="@font/inter"
+        app:layout_constraintTop_toBottomOf="@id/textview_tcn5"
+        app:layout_constraintStart_toStartOf="@id/guideline_start"
+        app:layout_constraintEnd_toEndOf="@id/guideline_end"/>
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/textview_tcn7"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/dp10"
+        android:textColor="@color/night_blue"
+        android:textStyle="bold"
+        android:textSize="@dimen/sp11"
+        android:text="4.INDEMNITY"
+        android:fontFamily="@font/inter"
+        app:layout_constraintTop_toBottomOf="@id/textview_tcn6"
+        app:layout_constraintStart_toStartOf="@id/guideline_start"
+        app:layout_constraintEnd_toEndOf="@id/guideline_end"/>
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/textview_tcn8"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/dp10"
+        android:layout_marginTop="@dimen/dp5"
+        android:textSize="@dimen/sp11"
+        android:fontFamily="@font/inter"
+        android:textColor="@color/gray"
+        android:text="@string/tcn_text4"
+        app:layout_constraintTop_toBottomOf="@id/textview_tcn7"
+        app:layout_constraintStart_toStartOf="@id/guideline_start"
+        app:layout_constraintEnd_toEndOf="@id/guideline_end"/>
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/textview_tcn9"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/dp10"
+        android:textColor="@color/night_blue"
+        android:textSize="@dimen/sp11"
+        android:fontFamily="@font/inter"
+        android:textStyle="bold"
+        android:text="5.SEVERANCE"
+        app:layout_constraintTop_toBottomOf="@id/textview_tcn8"
+        app:layout_constraintStart_toStartOf="@id/guideline_start"
+        app:layout_constraintEnd_toEndOf="@id/guideline_end" />
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/textview_tcn10"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/dp5"
+        android:layout_marginStart="@dimen/dp10"
+        android:textSize="@dimen/sp11"
+        android:textColor="@color/gray"
+        android:text="@string/tcn_text5"
+        android:fontFamily="@font/inter"
+        app:layout_constraintTop_toBottomOf="@id/textview_tcn9"
+        app:layout_constraintStart_toStartOf="@id/guideline_start"
+        app:layout_constraintEnd_toEndOf="@id/guideline_end"/>
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/textview_tcn11"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/dp10"
+        android:textStyle="bold"
+        android:textSize="@dimen/sp11"
+        android:textColor="@color/night_blue"
+        android:fontFamily="@font/inter"
+        android:text="6.WAIVER"
+        app:layout_constraintTop_toBottomOf="@id/textview_tcn10"
+        app:layout_constraintStart_toStartOf="@id/guideline_start"
+        app:layout_constraintEnd_toEndOf="@id/guideline_end"/>
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/textview_tcn12"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginTop="@dimen/dp5"
+        android:layout_marginStart="@dimen/dp10"
+        android:textSize="@dimen/sp11"
+        android:fontFamily="@font/inter"
+        android:textColor="@color/gray"
+        android:text="@string/tcn_text6"
+        app:layout_constraintTop_toBottomOf="@id/textview_tcn11"
+        app:layout_constraintStart_toStartOf="@id/guideline_start"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="@id/guideline_end"/>
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline_start"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.05" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline_end"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.95" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

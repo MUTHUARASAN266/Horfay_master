@@ -1,5 +1,6 @@
 package com.example.horfay123.ui
 
+import android.annotation.SuppressLint
 import android.content.Intent
 import android.os.Bundle
 import android.util.Log
@@ -32,15 +33,16 @@ class HomeDashboard : Fragment(R.layout.fragment_home_dashboard) {
         super.onCreate(savedInstanceState)
         val locala=arguments?.getString("address123")
         Log.e(TAG, "onCreate: $locala")
-        activity?.window?.setSoftInputMode(WindowManager.LayoutParams.SOFT_INPUT_ADJUST_PAN);
+        activity?.window?.setSoftInputMode(WindowManager.LayoutParams.SOFT_INPUT_ADJUST_PAN)
 
     }
 
+    @SuppressLint("SetTextI18n", "InflateParams")
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View? {
-        activity?.window?.setSoftInputMode(WindowManager.LayoutParams.SOFT_INPUT_ADJUST_PAN);
+    ): View {
+        activity?.window?.setSoftInputMode(WindowManager.LayoutParams.SOFT_INPUT_ADJUST_PAN)
 
         // Inflate the layout for this fragment
         binding = FragmentHomeDashboardBinding.inflate(inflater, container, false)
@@ -51,8 +53,13 @@ class HomeDashboard : Fragment(R.layout.fragment_home_dashboard) {
 
         val sharedPreferences= SharedPreferences(context)
         sharedPreferences.loadData("myCurrentLocation")
-        binding.myCourentLocation.text=sharedPreferences.loadData("myCurrentLocation")
-        Log.e(TAG, "myCurrentLocation: ${sharedPreferences.loadData("myCurrentLocation")}", )
+        val data=  sharedPreferences.loadData("myCurrentLocation")
+        if (data==null){
+            binding.myCourentLocation.text="26A, KAZHUGAPULIKADU"
+        }else{
+            binding.myCourentLocation.text=sharedPreferences.loadData("myCurrentLocation")
+            Log.e(TAG, "myCurrentLocation: ${sharedPreferences.loadData("myCurrentLocation")}", )
+        }
 
         toolbar = binding.toolBarDashboard
      //   (activity as AppCompatActivity).setSupportActionBar(toolbar)
@@ -95,7 +102,7 @@ class HomeDashboard : Fragment(R.layout.fragment_home_dashboard) {
                 // BottomSheetDialog
 
 //                val bottomSheetDialog: BottomSheetDialog = BottomSheetDialog(this@SelectedServiceScreen,R.style.CustomBottomSheetDialogTheme)
-                val bottomSheetDialog: BottomSheetDialog = BottomSheetDialog(requireContext(),
+                val bottomSheetDialog = BottomSheetDialog(requireContext(),
                     R.style.CustomBottomSheetDialogTheme
                 )
                 val view=bottomSheetDialog.layoutInflater.inflate(R.layout.change_location_bottomscreen,null)
@@ -107,8 +114,70 @@ class HomeDashboard : Fragment(R.layout.fragment_home_dashboard) {
                 bottomSheetDialog.show()
 
             }
+            logoutText.setOnClickListener {
+                startActivity(Intent(requireContext(),SigninScreen::class.java))
+
+
+            }
+            myProfile.setOnClickListener {
+                startActivity(Intent(context,ProfileScreen::class.java))
+            }
+
+            var count=0
+            supportBtn.setOnClickListener {
+                if(count==0){
+                    count++
+                    layMuthu0.visibility=View.VISIBLE
+                }else{
+                    count=0
+                    layMuthu0.visibility=View.GONE
+
+                }
+            }
+            drawerClose.setOnClickListener {
+                drawerLayout.closeDrawer()
+            }
+
+            aboutUsText.setOnClickListener {
+                startActivity(Intent(context,AboutUsScreen::class.java))
+            }
+            tcnText.setOnClickListener {
+                startActivity(Intent(context,TCnScreen::class.java))
+            }
+            contactUsText.setOnClickListener {
+                startActivity(Intent(context,ContactUsScreen::class.java))
+                Log.e(TAG, "onCreateView:ContactUsScreen", )
+            }
 
         }
+
+
+        binding.mutharsanKpk.setOnNavigationItemSelectedListener { item ->
+            when (item.itemId) {
+                R.id.home_dashboard -> {
+                    findNavController().navigate(R.id.home_dashboard)
+                    true
+                }
+                R.id.notificationFragment -> {
+                    findNavController().navigate(R.id.notificationFragment)
+                    binding.mutharsanKpk.visibility=View.GONE
+                    true
+                }
+                R.id.service_menu -> {
+                    //  navController.navigate(R.id.notificationFragment)
+                    true
+                }
+                R.id.chartFragmentScreen -> {
+                    findNavController().navigate(R.id.chartFragmentScreen)
+                    binding.mutharsanKpk.visibility=View.GONE
+                    true
+                }
+                else -> false
+            }
+        }
+
+
+
         return binding.root
 
     }
@@ -125,6 +194,11 @@ class HomeDashboard : Fragment(R.layout.fragment_home_dashboard) {
 
         drawerLayout.setDrawerListener(drawerToggle)
         drawerToggle.syncState()
+    }
+
+    override fun onResume() {
+        super.onResume()
+        Log.e(TAG, "onResume: ")
     }
 
 }

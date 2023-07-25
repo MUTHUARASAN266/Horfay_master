@@ -59,7 +59,7 @@
             android:id="@+id/sub_card"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_margin="@dimen/dp10"
+            android:layout_margin="@dimen/dp5"
             app:cardBackgroundColor="@color/white"
             app:cardCornerRadius="@dimen/dp10"
             app:cardElevation="@dimen/dp10"
@@ -70,7 +70,7 @@
             <ImageView
                 android:id="@+id/sub_img"
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
+                android:layout_height="@dimen/dp150"
                 android:scaleType="fitXY"
                 android:src="@drawable/image_s13" />
         </androidx.cardview.widget.CardView>
@@ -79,11 +79,12 @@
             android:id="@+id/sub_text"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="@dimen/dp5"
+            android:layout_marginTop="@dimen/dp1"
             android:text="Facial for glow"
             android:textAlignment="center"
             android:textColor="#161616"
             android:textStyle="bold"
+            android:layout_marginBottom="@dimen/dp5"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"

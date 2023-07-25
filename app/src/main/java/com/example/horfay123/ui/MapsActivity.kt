@@ -2,6 +2,7 @@ package com.example.horfay123.ui
 
 import android.Manifest
 import android.content.Context
+import android.content.Intent
 import android.content.pm.PackageManager
 import android.graphics.Bitmap
 import android.graphics.Canvas
@@ -10,6 +11,7 @@ import android.location.Geocoder
 import android.location.Location
 import android.os.Bundle
 import android.os.Looper
+import android.util.Log
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.app.ActivityCompat
 import androidx.core.content.ContextCompat
@@ -17,6 +19,7 @@ import com.example.horfay123.R
 import com.example.horfay123.SharedPreferences
 import com.example.horfay123.databinding.ActivityMapsBinding
 import com.example.horfay123.snack
+import com.example.horfay123.toast
 import com.google.android.gms.location.*
 import com.google.android.gms.maps.CameraUpdateFactory
 import com.google.android.gms.maps.GoogleMap
@@ -31,6 +34,7 @@ import java.util.*
 
 class MapsActivity : AppCompatActivity(), OnMapReadyCallback {
 
+    val TAG="MapsActivity"
     private val PERMISSION_ID = 42
     lateinit var mFusedLocationClient: FusedLocationProviderClient
     private lateinit var mMap: GoogleMap
@@ -58,7 +62,8 @@ class MapsActivity : AppCompatActivity(), OnMapReadyCallback {
         }
 
         binding.btnConfirmLocation.setOnClickListener {
-                finish()
+            finish()
+           // startActivity(Intent(this,Dashboard::class.java))
         }
 
     }
@@ -166,24 +171,34 @@ class MapsActivity : AppCompatActivity(), OnMapReadyCallback {
         // 51.69026693985225, -0.41756896364015167 UK
         // 27.175297436920296, 78.04243185161019 TajMahal
 
-        val address: String = addresses!![0].getAddressLine(0) // If any additional address line present than only, check with max available address lines by getMaxAddressLineIndex()
-        val sendAddress="${addresses[0]?.subLocality}, ${addresses[0]?.locality}"
+        try {
+           /* if (addresses?.isEmpty()==true){
+                toast("its sea please click ground")
+            }*/
+            val address: String = addresses?.get(0)!!.getAddressLine(0) // If any additional address line present than only, check with max available address lines by getMaxAddressLineIndex()
+            val sendAddress="${addresses[0].locality}, ${addresses[0].adminArea}"
 
-        // data passing
-        val bundle = Bundle()
-        bundle.putString("address123", sendAddress)
+            // data passing
+            val bundle = Bundle()
+            bundle.putString("address123", sendAddress)
 
-        val fragment = HomeDashboard()
-        fragment.arguments = bundle
-        val sharedPreferences= SharedPreferences(this)
-        sharedPreferences.saveData("myCurrentLocation", sendAddress)
+            val fragment = HomeDashboard()
+            fragment.arguments = bundle
+            val sharedPreferences= SharedPreferences(this)
+            sharedPreferences.saveData("myCurrentLocation", sendAddress)
 
-        binding.addressText.text=address
-        val city: String? = addresses[0].locality
-        val state: String? = addresses[0].adminArea
-        val country: String? = addresses[0].countryName
-        val postalCode: String? = addresses[0].postalCode
-        val knownName: String? = addresses[0].featureName
+            binding.addressText.text=address
+            val city: String? = addresses[0].locality
+            val state: String? = addresses[0].adminArea
+            val country: String? = addresses[0].countryName
+            val postalCode: String? = addresses[0].postalCode
+            val knownName: String? = addresses[0].featureName
+
+            Log.e(TAG, "getAddress: ${"$city $state $country $postalCode $knownName ${addresses[0].subLocality}"}", )
+        } catch (e:Exception){
+            toast("this is sea. can you please click land side")
+        }
+
     }
 
     private fun generateBitmapDescriptorFromRes(context: Context, resId: Int): BitmapDescriptor {

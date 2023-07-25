@@ -1,89 +1,74 @@
 package com.example.horfay123.ui
 
-import android.content.Intent
-import androidx.appcompat.app.AppCompatActivity
+import android.Manifest
+import android.app.AlertDialog
+import android.content.pm.PackageManager
 import android.os.Bundle
 import android.util.Log
 import android.view.View
+import android.widget.TextView
+import androidx.appcompat.app.AppCompatActivity
+import androidx.core.app.ActivityCompat
+import androidx.core.content.ContextCompat
 import androidx.fragment.app.Fragment
 import androidx.navigation.NavController
+import androidx.navigation.NavDestination
+import androidx.navigation.findNavController
 import androidx.navigation.fragment.NavHostFragment
 import androidx.navigation.ui.setupWithNavController
 import com.example.horfay123.R
+import com.example.horfay123.toast
 import com.google.android.material.bottomnavigation.BottomNavigationView
+import com.google.android.material.button.MaterialButton
 
 class Dashboard : AppCompatActivity() {
     val TAG="Dashboard"
-    lateinit var bottomNav : BottomNavigationView
+    lateinit var navView : BottomNavigationView
+    private lateinit var navController1234:NavController
     lateinit var view:View
+    private lateinit var destinationListener: NavController.OnDestinationChangedListener
     lateinit var fragment: Fragment
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_dashboard)
         Log.e(TAG, "onCreate:")
 
-
+        dialogBox()
         val navHostFragment = supportFragmentManager.findFragmentById(R.id.fragmentContainerView) as NavHostFragment
         val navController: NavController = navHostFragment.navController
 
-       // val navController = this.findNavController(R.id.fragmentContainerView)
-
-
         // Find reference to bottom navigation view
-        val navView: BottomNavigationView = findViewById(R.id.bottom_navi)
+         navView = findViewById(R.id.bottom_navi)
         // Hook your navigation controller to bottom navigation view
         navView.setupWithNavController(navController)
+
 
         navView.setOnNavigationItemSelectedListener { item ->
             when (item.itemId) {
                 R.id.home_dashboard -> {
                     navController.navigate(R.id.home_dashboard)
+                    //navView.visibility=View.GONE
                     true
                 }
                 R.id.notificationFragment -> {
                     navController.navigate(R.id.notificationFragment)
+                    navView.visibility=View.VISIBLE
                     true
                 }
                 R.id.service_menu -> {
+                    navView.visibility=View.VISIBLE
                   //  navController.navigate(R.id.notificationFragment)
                     true
                 }
-                R.id.message_menu -> {
+                R.id.chartFragmentScreen -> {
+                    navView.visibility=View.VISIBLE
+                    navController.navigate(R.id.chartFragmentScreen)
                    // navController.navigate(R.id.notificationFragment)
                     true
                 }
                 else -> false
             }
         }
-
-
-        /*
-        bottomNav.setOnItemSelectedListener { menuItem->
-            when (menuItem.itemId) {
-                R.id.home_menu -> {
-
-                    true
-                }
-                R.id.notification_menu -> {
-
-                    menuItem.actionView?.findNavController()?.navigate(R.id.action_home_dashboard_to_notificationFragment)
-//                    Navigation.findNavController(view).navigate(R.id.action_home_dashboard_to_notificationFragment);
-//                    findNavController().navigate(R.id.action_home_dashboard_to_notificationFragment)
-                    true
-                }
-                R.id.service_menu -> {
-
-                    true
-                }
-                R.id.message_menu -> {
-                    true
-                }
-                else -> {
-                    false
-                }
-            }
-        }
-        */
 
 
         /*
@@ -110,13 +95,59 @@ class Dashboard : AppCompatActivity() {
         findViewById<TextView>(R.id.logout_text).setOnClickListener {
             startActivity(Intent(this,SigninScreen::class.java))
             finish()
-
-
-
         }
 
        */
 
+    }
+
+    private fun dialogBox() {
+        val builder = AlertDialog.Builder(this,R.style.CustomAlertDialog)
+            .create()
+        val view = layoutInflater.inflate(R.layout.location_dialog,null)
+        val  button = view.findViewById<TextView>(R.id.not_now_button)
+        val  button1 = view.findViewById<MaterialButton>(R.id.ok_button)
+        builder.setView(view)
+        button.setOnClickListener {
+            builder.dismiss()
+        }
+        button1.setOnClickListener {
+            locationPermission()
+            builder.dismiss()
+        }
+        builder.setCanceledOnTouchOutside(false)
+        builder.show()
+    }
+
+    private fun locationPermission() {
+        if (ContextCompat.checkSelfPermission(this,Manifest.permission.ACCESS_FINE_LOCATION)==PackageManager.PERMISSION_GRANTED){
+            toast("PERMISSION_GRANTED")
+        }else{
+            requestLocationPermission()
+        }
+    }
+
+    private fun requestLocationPermission() {
+       if(ActivityCompat.shouldShowRequestPermissionRationale(this,Manifest.permission.ACCESS_FINE_LOCATION)){
+           ActivityCompat.requestPermissions(this,arrayOf(Manifest.permission.ACCESS_FINE_LOCATION,Manifest.permission.ACCESS_COARSE_LOCATION),100)
+       }
+        else{
+           requestPermissions(arrayOf(Manifest.permission.ACCESS_FINE_LOCATION,Manifest.permission.ACCESS_COARSE_LOCATION),100)
+
+       }
+    }
+
+    override fun onRequestPermissionsResult(
+        requestCode: Int,
+        permissions: Array<out String>,
+        grantResults: IntArray
+    ) {
+        super.onRequestPermissionsResult(requestCode, permissions, grantResults)
+        if (grantResults.size==1&&grantResults[0]==PackageManager.PERMISSION_GRANTED){
+            toast("PERMISSION_GRANTED")
+        }else{
+            toast("PERMISSION_NOT_GRANTED")
+        }
     }
 
     private fun showFragment(fragment: Fragment) {
@@ -138,11 +169,11 @@ class Dashboard : AppCompatActivity() {
         */
     }
 
-    override fun onBackPressed() {
-        super.onBackPressed()
-        startActivity(Intent(this,SigninScreen::class.java))
-            finish()
-    }
+//    override fun onBackPressed() {
+//        super.onBackPressed()
+////        startActivity(Intent(this,SigninScreen::class.java))
+////            finish()
+//    }
     override fun onStart() {
         super.onStart()
         Log.e(TAG, "onStart: ")
@@ -150,11 +181,36 @@ class Dashboard : AppCompatActivity() {
 
     override fun onResume() {
         super.onResume()
+        currentFragment()
         Log.e(TAG, "onResume: ")
+    }
+
+    private fun currentFragment() {
+        navController1234 = this.findNavController(R.id.fragmentContainerView)
+        destinationListener = NavController.OnDestinationChangedListener { navController:NavController, destination: NavDestination, bundle:Bundle? ->
+            when (destination.id) {
+                R.id.allCategories -> {
+                    navView.visibility=View.VISIBLE
+                }
+                R.id.notificationFragment -> {
+                    navView.visibility=View.VISIBLE
+                }
+                R.id.chartFragmentScreen -> {
+                    navView.visibility=View.VISIBLE
+                }
+                else -> {
+                    navView.visibility=View.GONE
+                }
+            }
+        }
+
+        navController1234.addOnDestinationChangedListener(destinationListener)
+
     }
 
     override fun onPause() {
         super.onPause()
+        navController1234.removeOnDestinationChangedListener(destinationListener)
         Log.e(TAG, "onPause: ")
     }
 

@@ -62,69 +62,78 @@ class SignUpScreen : AppCompatActivity() {
                 //validation()
                 //  mobileNumber.setText(String.format("% d", 1234567890));
                 binding.apply {
-                    if (editTextName.text.toString().isEmpty()) {
-                        it.snack("name is empty", 1500)
+                    when {
+                        editTextName.text.toString().isEmpty() -> {
+                            it.snack("name is empty", 1500)
 
-                    } else if (editTextLastname.text.toString().isEmpty()) {
-                        it.snack("lastname is empty", 1500)
+                        }
+                        editTextLastname.text.toString().isEmpty() -> {
+                            it.snack("lastname is empty", 1500)
 
-                    } else if (editTextEmail.text.toString().isEmpty()) {
-                        it.snack("email is empty", 1500)
+                        }
+                        editTextEmail.text.toString().isEmpty() -> {
+                            it.snack("email is empty", 1500)
 
-                    } else if (mobileNumber.text.toString().isEmpty()) {
-                        it.snack("mobile number is empty", 1500)
+                        }
+                        mobileNumber.text.toString().isEmpty() -> {
+                            it.snack("mobile number is empty", 1500)
 
-                    } else if (edittextCity.text.toString().isEmpty()) {
-                        it.snack("city is empty", 1500)
+                        }
+                        edittextCity.text.toString().isEmpty() -> {
+                            it.snack("city is empty", 1500)
 
-                    } else if (editTextPassword.text.toString().isEmpty()) {
-                        it.snack("password is empty", 1500)
+                        }
+                        editTextPassword.text.toString().isEmpty() -> {
+                            it.snack("password is empty", 1500)
 
-                    } else if (editTextConfirmPasswrd.text.toString().isEmpty()) {
-                        it.snack("confirm password is empty", 1500)
+                        }
+                        editTextConfirmPasswrd.text.toString().isEmpty() -> {
+                            it.snack("confirm password is empty", 1500)
 
-                    } else if (editTextPassword.text.toString().trim()
-                        != editTextConfirmPasswrd.text.toString().trim()
-                    ) {
-                        it.snack("password miss match", 1500)
-                        Log.e(TAG, "validation: -> is different")
-                    } else {
-                        val countryCode = codePicker.selectedCountryCodeWithPlus
-                        Log.e(
-                            TAG,
-                            "countryCode: ${countryCode + binding.mobileNumber.text.toString()}"
-                        )
-                        CoroutineScope(Dispatchers.Main).launch {
-                            viewModel.signUp(
-                                SignUpData
-                                    (
-                                    "User",
-                                    binding.edittextCity.text.toString(),
-                                    citry,
-                                    binding.editTextEmail.text.toString(),
-                                    binding.editTextName.text.toString(),
-                                    binding.editTextLastname.text.toString(),
-                                    binding.editTextPassword.text.toString(),
-                                    countryCode + binding.mobileNumber.text.toString(),
-                                    binding.editTextLastname.text.toString(),
-                                )
+                        }
+                        editTextPassword.text.toString().trim()
+                                != editTextConfirmPasswrd.text.toString().trim() -> {
+                            it.snack("password miss match", 1500)
+                            Log.e(TAG, "validation: -> is different")
+                        }
+                        else -> {
+                            val countryCode = codePicker.selectedCountryCodeWithPlus
+                            Log.e(
+                                TAG,
+                                "countryCode: ${countryCode + binding.mobileNumber.text.toString()}"
                             )
+                            CoroutineScope(Dispatchers.Main).launch {
+                                viewModel.signUp(
+                                    SignUpData
+                                        (
+                                        "User",
+                                        binding.edittextCity.text.toString(),
+                                        citry,
+                                        binding.editTextEmail.text.toString(),
+                                        binding.editTextName.text.toString(),
+                                        binding.editTextLastname.text.toString(),
+                                        binding.editTextPassword.text.toString(),
+                                        countryCode + binding.mobileNumber.text.toString(),
+                                        binding.editTextLastname.text.toString(),
+                                    )
+                                )
 
-                            viewModel.signInResult.observe(this@SignUpScreen) { result ->
-                                when (result) {
-                                    is SignInResult.Success -> {
-                                        val token = result.response.message
-                                        val userId = result.response.status
-                                        Log.e(TAG, "onCreate: $token")
-                                        Log.e(TAG, "onCreate: $userId")
-                                        it.snack(userId, 1500)
-                                        // Handle successful sign-in
-                                    }
-                                    is SignInResult.Error -> {
-                                        val errorMessage = result.message
-                                        Log.e(TAG, "onCreate: $errorMessage")
-                                        it.snack(errorMessage, 1500)
-                                        // Handle sign-in error
+                                viewModel.signInResult.observe(this@SignUpScreen) { result ->
+                                    when (result) {
+                                        is SignInResult.Success -> {
+                                            val token = result.response.message
+                                            val userId = result.response.status
+                                            Log.e(TAG, "onCreate: $token")
+                                            Log.e(TAG, "onCreate: $userId")
+                                            it.snack(userId, 1500)
+                                            // Handle successful sign-in
+                                        }
+                                        is SignInResult.Error -> {
+                                            val errorMessage = result.message
+                                            Log.e(TAG, "onCreate: $errorMessage")
+                                            it.snack(errorMessage, 1500)
+                                            // Handle sign-in error
+                                        }
                                     }
                                 }
                             }

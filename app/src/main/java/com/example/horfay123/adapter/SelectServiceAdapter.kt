@@ -23,7 +23,7 @@ class SelectServiceAdapter(
             binding.textServiceName.paintFlags =
                 binding.textServiceName.paintFlags or Paint.UNDERLINE_TEXT_FLAG
             binding.textServiceName.text = myData.service_name
-            binding.imgService.setImageResource(myData.image)
+            myData.image?.let { binding.imgService.setImageResource(it) }
             binding.textPrice.text = myData.price
             binding.textServiceDes1.text = myData.mins
             binding.textServiceDes2.text = myData.service_des1
@@ -33,7 +33,7 @@ class SelectServiceAdapter(
             binding.textProviderName.paintFlags =
                 binding.textProviderName.paintFlags or Paint.UNDERLINE_TEXT_FLAG
             binding.textProviderName.text = pData.provider_name
-            binding.providerImg.setImageResource(pData.image)
+            pData.image?.let { binding.providerImg.setImageResource(it) }
             binding.textRatingProvider.text = pData.rating
             binding.textProviderJob.text = pData.job
             binding.textProviderPrice.text = pData.price
