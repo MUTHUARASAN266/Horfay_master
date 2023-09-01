@@ -36,6 +36,7 @@
             android:ems="10"
             android:hint="Search"
             android:imeOptions="actionNext"
+            android:textColorHint="@color/gray"
             android:inputType="textPersonName"
             android:paddingStart="@dimen/dp24"
             android:layout_marginEnd="@dimen/dp10"

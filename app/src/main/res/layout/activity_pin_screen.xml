@@ -85,6 +85,7 @@
         android:layout_height="wrap_content"
         android:text="@string/pin_description"
         android:textAlignment="center"
+        android:textColor="@color/gray"
         android:textSize="@dimen/sp16"
         app:layout_constraintEnd_toEndOf="@id/guideline_end"
         app:layout_constraintStart_toStartOf="@id/guideline_start"

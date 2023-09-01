@@ -63,7 +63,9 @@ data class VendorHeaderItemData(
     val itemName:String?,
     val rating: String?,
     val job: String?
-)data class VendorCartItemData(
+)
+@Parcelize
+data class VendorCartItemData(
     val image:Int?,
     val mackUpName:String?,
     val amount:String?,
@@ -71,6 +73,13 @@ data class VendorHeaderItemData(
     val info_one: String?,
     val info_two: String?,
     val isChecked: Boolean = false
+):Parcelable
+data class AddressItemBot(
+    val title:String?,
+    val address:String?
+)data class AddressItemBotFull(
+    val title:String?,
+    val address:String?
 )
 
 

@@ -11,7 +11,7 @@
         android:id="@+id/muthu01_layout"
         android:layout_width="match_parent"
         app:layout_behavior="com.google.android.material.bottomsheet.BottomSheetBehavior"
-        android:layout_height="wrap_content"
+        android:layout_height="match_parent"
         android:background="@drawable/corner_round"
         android:orientation="vertical"
         app:layout_constraintEnd_toEndOf="parent"

@@ -9,7 +9,7 @@ import java.util.concurrent.TimeUnit
 
 object NetworkService {
     //full URL ="https://horfay.colan.in/logininfo/"
-    private const val BASE_URL = "https://horfay.colan.in/"
+    private const val BASE_URL = "https://staging-horfay.colan.in/"
     private fun getInterceptor(): OkHttpClient {
         val httpLoggingInterceptor = HttpLoggingInterceptor()
         httpLoggingInterceptor.level = HttpLoggingInterceptor.Level.BODY

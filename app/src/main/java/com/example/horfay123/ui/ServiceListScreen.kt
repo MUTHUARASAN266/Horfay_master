@@ -91,4 +91,8 @@ class ServiceListScreen : AppCompatActivity(),VendorList {
     override fun onUnitItemClick(currentItem: ListOfServiceData) {
         startActivity(Intent(this, ServiceOfferingCardScreen::class.java))
     }
+
+    override fun onUnitItemClickPageScreen(currentItem: ListOfServiceData) {
+        startActivity(Intent(this, ServicePageScreen::class.java))
+    }
 }

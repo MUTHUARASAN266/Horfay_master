@@ -417,6 +417,7 @@
                                         android:background="@drawable/singin_back"
                                         android:ems="10"
                                         android:hint="Search what you need..."
+                                        android:textColorHint="@color/gray"
                                         android:imeOptions="actionDone"
                                         android:inputType="textPersonName"
                                         android:paddingStart="@dimen/dp10"

@@ -34,6 +34,7 @@
             android:background="@drawable/singin_back"
             android:ems="10"
             android:hint="Search"
+            android:textColorHint="@color/gray"
             android:imeOptions="actionNext"
             android:inputType="textPersonName"
             android:paddingStart="@dimen/dp24"

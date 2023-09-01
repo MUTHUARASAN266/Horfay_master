@@ -47,7 +47,7 @@ class Dashboard : AppCompatActivity() {
             when (item.itemId) {
                 R.id.home_dashboard -> {
                     navController.navigate(R.id.home_dashboard)
-                    //navView.visibility=View.GONE
+                  //  navView.visibility=View.VISIBLE
                     true
                 }
                 R.id.notificationFragment -> {
@@ -64,6 +64,11 @@ class Dashboard : AppCompatActivity() {
                     navView.visibility=View.VISIBLE
                     navController.navigate(R.id.chartFragmentScreen)
                    // navController.navigate(R.id.notificationFragment)
+                    true
+                }
+                R.id.yourCartFragment->{
+                    navView.visibility=View.VISIBLE
+                    navController.navigate(R.id.yourCartFragment)
                     true
                 }
                 else -> false
@@ -143,7 +148,7 @@ class Dashboard : AppCompatActivity() {
         grantResults: IntArray
     ) {
         super.onRequestPermissionsResult(requestCode, permissions, grantResults)
-        if (grantResults.size==1&&grantResults[0]==PackageManager.PERMISSION_GRANTED){
+        if (grantResults.isNotEmpty() && grantResults[0] ==PackageManager.PERMISSION_GRANTED){
             toast("PERMISSION_GRANTED")
         }else{
             toast("PERMISSION_NOT_GRANTED")
@@ -189,6 +194,9 @@ class Dashboard : AppCompatActivity() {
         navController1234 = this.findNavController(R.id.fragmentContainerView)
         destinationListener = NavController.OnDestinationChangedListener { navController:NavController, destination: NavDestination, bundle:Bundle? ->
             when (destination.id) {
+                R.id.home_dashboard->{
+                    navView.visibility=View.GONE
+                }
                 R.id.allCategories -> {
                     navView.visibility=View.VISIBLE
                 }
@@ -197,6 +205,10 @@ class Dashboard : AppCompatActivity() {
                 }
                 R.id.chartFragmentScreen -> {
                     navView.visibility=View.VISIBLE
+                }
+                R.id.yourCartFragment->{
+                    navView.visibility=View.VISIBLE
+
                 }
                 else -> {
                     navView.visibility=View.GONE

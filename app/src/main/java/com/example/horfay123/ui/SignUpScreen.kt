@@ -3,11 +3,13 @@ package com.example.horfay123.ui
 import SignInResult
 import android.content.Intent
 import android.graphics.Color
+import android.os.Build
 import android.os.Bundle
 import android.text.Editable
 import android.text.TextWatcher
 import android.util.Log
 import android.view.View
+import android.view.WindowInsets
 import android.widget.AdapterView
 import android.widget.TextView
 import androidx.activity.viewModels
@@ -41,6 +43,18 @@ class SignUpScreen : AppCompatActivity() {
         binding = ActivitySignUpScreenBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
+        binding.root.setOnApplyWindowInsetsListener { _, windowInsets ->
+            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.R) {
+                val imeHeight = windowInsets.getInsets(WindowInsets.Type.ime()).bottom
+                binding.root.setPadding(0, 0, 0, imeHeight)
+                val insets = windowInsets.getInsets(WindowInsets.Type.ime() or WindowInsets.Type.systemGestures())
+                insets
+            }
+
+            windowInsets
+        }
+
+
         //spinner
         countrySpiiner()
         val retrofitService = NetworkService.create()
@@ -53,6 +67,10 @@ class SignUpScreen : AppCompatActivity() {
         binding.apply {
             backButton.setOnClickListener {
                 onBackPressedDispatcher.onBackPressed()
+            }
+
+            backButton.setOnClickListener {
+
             }
             textviewAlreadyAccount.setOnClickListener {
                 startActivity(Intent(this@SignUpScreen, SigninScreen::class.java))

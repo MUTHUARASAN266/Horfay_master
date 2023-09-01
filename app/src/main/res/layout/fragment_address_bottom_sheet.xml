@@ -1,0 +1,212 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@drawable/corner_round"
+    android:backgroundTint="@color/white"
+    tools:context=".ui.AddressBottomSheet">
+
+    <ImageView
+        android:id="@+id/dummy_image"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/dp10"
+        android:src="@drawable/rectangle_1120"
+        app:layout_constraintEnd_toEndOf="@id/guideline_end"
+        app:layout_constraintStart_toStartOf="@id/guideline_start"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/city_textview_add_bot"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/dp15"
+        android:fontFamily="@font/inter_bold"
+        android:text="Bhel Nagar"
+        android:textColor="@color/black"
+        android:textSize="@dimen/sp20"
+        app:layout_constraintStart_toStartOf="@id/guideline_start"
+        app:layout_constraintTop_toBottomOf="@+id/dummy_image" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/change_address_btn"
+        android:layout_width="63dp"
+        android:layout_height="33dp"
+        android:padding="2dp"
+        android:text="change"
+        android:background="@drawable/addres_round_btn"
+        android:textColor="@color/black"
+        android:textSize="@dimen/sp10"
+        android:layout_marginTop="@dimen/dp15"
+        app:layout_constraintBottom_toTopOf="@id/dummy_addres_view1"
+        app:layout_constraintEnd_toEndOf="@id/guideline_end"
+        app:layout_constraintTop_toBottomOf="@+id/dummy_image" />
+
+    <View
+        android:id="@+id/dummy_addres_view1"
+        android:layout_width="0dp"
+        android:layout_height="10dp"
+        app:layout_constraintStart_toStartOf="@id/guideline_start"
+        app:layout_constraintEnd_toEndOf="@id/guideline_end"
+        app:layout_constraintTop_toBottomOf="@+id/city_textview_add_bot" />
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/addres_text_view"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:textColor="@color/gray"
+        android:fontFamily="@font/inter"
+        android:text="@string/address_dummy_text"
+        app:layout_constraintStart_toStartOf="@id/guideline_start"
+        app:layout_constraintEnd_toEndOf="@id/guideline_end"
+        app:layout_constraintTop_toBottomOf="@id/dummy_addres_view1"/>
+
+    <View
+        android:id="@+id/dummy_addres_view2"
+        android:layout_width="0dp"
+        android:layout_height="1dp"
+        android:background="@color/card_back"
+        android:layout_marginTop="10dp"
+        app:layout_constraintStart_toStartOf="@id/guideline_start"
+        app:layout_constraintEnd_toEndOf="@id/guideline_end"
+        app:layout_constraintTop_toBottomOf="@id/addres_text_view"/>
+
+    <EditText
+        android:id="@+id/house_edit_text"
+        android:layout_width="0dp"
+        android:layout_height="@dimen/dp55"
+        app:layout_constraintStart_toStartOf="@id/guideline_start"
+        app:layout_constraintEnd_toEndOf="@id/guideline_end"
+        android:layout_marginTop="@dimen/dp15"
+        android:background="@drawable/round_bg"
+        android:fontFamily="@font/inter"
+        android:backgroundTint="@color/card_back"
+        android:hint="House/Flat Number *"
+        android:paddingStart="@dimen/dp15"
+        android:textColorHint="@color/gray"
+        android:textColor="@color/black"
+        app:layout_constraintTop_toBottomOf="@+id/dummy_addres_view2"/>
+    <EditText
+        android:id="@+id/landmark_edit_text"
+        android:layout_width="0dp"
+        android:layout_height="@dimen/dp55"
+        app:layout_constraintStart_toStartOf="@id/guideline_start"
+        app:layout_constraintEnd_toEndOf="@id/guideline_end"
+        android:layout_marginTop="@dimen/dp15"
+        android:background="@drawable/round_bg"
+        android:backgroundTint="@color/card_back"
+        android:fontFamily="@font/inter"
+        android:hint="Landmark (Optional)"
+        android:paddingStart="@dimen/dp15"
+        android:textColorHint="@color/gray"
+        android:textColor="@color/black"
+        app:layout_constraintTop_toBottomOf="@+id/house_edit_text"/>
+
+    <View
+        android:id="@+id/dummy_addres_view3"
+        android:layout_width="0dp"
+        android:layout_height="@dimen/dp20"
+        app:layout_constraintStart_toStartOf="@id/guideline_start"
+        app:layout_constraintEnd_toEndOf="@id/guideline_end"
+        app:layout_constraintTop_toBottomOf="@id/landmark_edit_text"/>
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/dummy_text_view"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Save as"
+        android:textSize="@dimen/sp18"
+        android:fontFamily="@font/inter"
+        app:layout_constraintTop_toBottomOf="@+id/dummy_addres_view3"
+        app:layout_constraintStart_toStartOf="@id/guideline_start"/>
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/home_btn_address"
+        android:layout_width="63dp"
+        android:layout_height="33dp"
+        android:padding="2dp"
+        android:text="Home"
+        android:background="@drawable/round_bg"
+        android:backgroundTint="@color/card_back"
+        android:textColor="@color/black"
+        android:textSize="@dimen/sp10"
+        android:layout_marginTop="@dimen/dp15"
+        app:layout_constraintStart_toStartOf="@id/guideline_start"
+        app:layout_constraintTop_toBottomOf="@+id/dummy_text_view" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/other_btn_address"
+        android:layout_width="63dp"
+        android:layout_height="33dp"
+        android:background="@drawable/round_bg"
+        android:padding="2dp"
+        android:text="other"
+        android:backgroundTint="@color/card_back"
+        android:textColor="@color/black"
+        android:textSize="@dimen/sp10"
+        android:layout_marginStart="@dimen/dp10"
+        app:layout_constraintBottom_toBottomOf="@+id/home_btn_address"
+        app:layout_constraintStart_toEndOf="@+id/home_btn_address"
+        app:layout_constraintTop_toTopOf="@+id/home_btn_address" />
+    <EditText
+        android:id="@+id/other_edit_text"
+        android:layout_width="0dp"
+        android:layout_height="@dimen/dp55"
+        app:layout_constraintStart_toStartOf="@id/guideline_start"
+        app:layout_constraintEnd_toEndOf="@id/guideline_end"
+        android:layout_marginTop="@dimen/dp15"
+        android:background="@drawable/round_bg"
+        android:backgroundTint="@color/card_back"
+        android:fontFamily="@font/inter"
+        android:hint="others"
+        android:visibility="gone"
+        android:paddingStart="@dimen/dp15"
+        android:textColorHint="@color/gray"
+        android:textColor="@color/black"
+        app:layout_constraintTop_toBottomOf="@+id/other_btn_address"/>
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/save_address_btn"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toStartOf="@id/guideline_start"
+        app:layout_constraintEnd_toEndOf="@id/guideline_end"
+        android:background="@drawable/singin_back"
+        android:text="Save and proceed to slots"
+        android:textColor="@color/white"
+        android:backgroundTint="@color/black"
+        android:layout_marginTop="20dp"
+        app:layout_constraintBottom_toBottomOf="@id/guideline_bottom"
+        android:layout_marginBottom="@dimen/dp10"
+        app:layout_constraintTop_toBottomOf="@id/other_edit_text"/>
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline_start"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.05" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline_end"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.95" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline_top"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.05" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline_bottom"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="1.0" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

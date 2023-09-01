@@ -4,6 +4,7 @@ import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.example.horfay123.databinding.SubCategorieListBinding
+import com.example.horfay123.model.AddressItemBot
 import com.example.horfay123.model.SubCatData
 
 class SubCatAdapter(

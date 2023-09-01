@@ -27,7 +27,7 @@
         android:layout_height="wrap_content"
         android:text="Sign in"
         android:textColor="@color/black"
-        android:textSize="@dimen/dp32"
+        android:textSize="32sp"
         android:textStyle="bold"
         app:layout_constraintStart_toStartOf="@id/guideline_start"
         app:layout_constraintTop_toTopOf="@id/guideline_top" />

@@ -1,8 +1,7 @@
 package com.example.horfay123.ui
 
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import com.example.horfay123.R
+import androidx.appcompat.app.AppCompatActivity
 import com.example.horfay123.databinding.ActivityAboutUsScreenBinding
 
 class AboutUsScreen : AppCompatActivity() {

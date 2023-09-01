@@ -4,7 +4,7 @@
     style="@style/Widget.Horfay.CardView.Background"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:layout_margin="@dimen/dp10"
+    android:layout_margin="@dimen/dp5"
     app:cardBackgroundColor="#DADADA"
     app:cardCornerRadius="@dimen/dp14"
     app:cardElevation="@dimen/dp10">
@@ -121,6 +121,7 @@
                             android:layout_height="wrap_content"
                             android:paddingStart="@dimen/dp10"
                             android:text="45 mins"
+                            android:textColor="@color/gray"
                             app:layout_constraintStart_toEndOf="@id/dum_img_o1"
                             app:layout_constraintTop_toTopOf="parent" />
 
@@ -145,6 +146,7 @@
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:paddingStart="@dimen/dp10"
+                            android:textColor="@color/gray"
                             android:text="For all skin types. Pinacolada mask."
                             app:layout_constraintStart_toEndOf="@id/dum_img_o2"
                             app:layout_constraintTop_toTopOf="parent" />
@@ -170,6 +172,7 @@
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:paddingStart="@dimen/dp10"
+                            android:textColor="@color/gray"
                             android:text="6-step process. Includes 10-min massage"
                             app:layout_constraintStart_toEndOf="@id/dum_img_o3"
                             app:layout_constraintTop_toTopOf="parent" />
@@ -289,6 +292,7 @@
                             android:layout_height="wrap_content"
                             android:paddingStart="@dimen/dp10"
                             android:text="Price  ₹599"
+                            android:textColor="@color/gray"
                             app:layout_constraintStart_toEndOf="@id/dum_img_os1"
                             app:layout_constraintTop_toTopOf="parent" />
 
@@ -313,6 +317,7 @@
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:paddingStart="@dimen/dp10"
+                            android:textColor="@color/gray"
                             android:text="Specialises in Airbrush Make-up"
                             app:layout_constraintStart_toEndOf="@id/dum_img_oss2"
                             app:layout_constraintTop_toTopOf="parent" />

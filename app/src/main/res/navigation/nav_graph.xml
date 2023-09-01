@@ -30,5 +30,10 @@
         android:name="com.example.horfay123.ChatScreen"
         android:label="fragment_chat_screen"
         tools:layout="@layout/fragment_chat_screen" />
+    <fragment
+        android:id="@+id/yourCartFragment"
+        android:name="com.example.horfay123.ui.YourCartFragment"
+        android:label="fragment_your_cart"
+        tools:layout="@layout/fragment_your_cart" />
 
 </navigation>

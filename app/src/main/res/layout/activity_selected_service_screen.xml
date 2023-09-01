@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/white"
     tools:context=".ui.SelectedServiceScreen">
 
     <com.google.android.material.appbar.AppBarLayout
@@ -44,9 +45,10 @@
         android:layout_width="0dp"
         android:layout_height="0dp"
         tools:listitem="@layout/selected_service_list"
+        tools:itemCount="6"
         app:layout_constraintStart_toStartOf="@id/guideline_start"
         app:layout_constraintEnd_toEndOf="@id/guideline_end"
-        app:layout_constraintBottom_toBottomOf="@id/guideline_bottom"
+        app:layout_constraintBottom_toTopOf="@id/button_select_service"
         app:layout_constraintTop_toBottomOf="@id/guideline_top"/>
 
     <androidx.appcompat.widget.AppCompatButton
@@ -57,9 +59,10 @@
         android:backgroundTint="@color/black"
         android:text="@string/proceed"
         android:textColor="@color/white"
-        app:layout_constraintStart_toStartOf="@id/guideline_start"
+        app:layout_constraintTop_toBottomOf="@id/recyclerview_select_service"
+        app:layout_constraintBottom_toBottomOf="@+id/guideline_bottom"
         app:layout_constraintEnd_toEndOf="@id/guideline_end"
-        app:layout_constraintTop_toBottomOf="@id/guideline_bottom"/>
+        app:layout_constraintStart_toStartOf="@id/guideline_start" />
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/guideline_end"
         android:layout_width="wrap_content"
@@ -79,7 +82,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        app:layout_constraintGuide_percent="0.90" />
+        app:layout_constraintGuide_percent="0.99" />
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/guideline_top"

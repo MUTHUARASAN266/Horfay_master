@@ -29,6 +29,9 @@ sed do eiusmod tempor incididunt ut labore etsdd dolore magna aliqua laboris nis
 commodo consequat. Duis aute irure fggffgffrddf inreprehenderit</string>
     <string name="navigation_drawer_open">Open navigation drawer</string>
     <string name="navigation_drawer_close">Close navigation drawer</string>
+    <string name="date_bot_text">Free cancellation till 2hrs before the bookedslot, post that ₹50 chargeable</string>
+    <string name="location_direction">Sorry! Our Service is not available for this location right now Please select some other Location </string>
+    <string name="address_dummy_text">Bhel Nagar, Piplani, Ayodhya Bypass, Bhopal,Madhya Pradesh 462022, India </string>
     <string name="about_us_text1">Lorem Ipsum is simply dummy text of the printing and typesetting industry.Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting,remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages,and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum</string>
     <string name="tcn_text1">Your access to and use of Lorem Ipsum (the app) is subject exclusively to these Terms and Conditions. You will not use the app for any purpose that is unlawful or prohibited by these Terms and Conditions. By using the app you are fully accepting the terms,conditions and disclaimers contained in this notice. If you do not accept these Terms and Conditions you must immediately stop using the app.</string>
     <string name="tcn_text2">The contents of Lorem Ipsum app do not constitute advice and should not be relied upon in making or refraining from making, any decision.All material contained on Lorem Ipsum is provided without any or warranty of any kind. You use the material on Lorem Ipsum at your own discretion</string>
@@ -61,4 +64,5 @@ commodo consequat. Duis aute irure fggffgffrddf inreprehenderit</string>
     <string name="included">Included</string>
     <string name="title_activity_maps">MapsActivity</string>
     <string name="location_text">we will need your location to \n give you a better experience.</string>
+    <string name="selected_services"><u>Selected Services</u></string>
 </resources>

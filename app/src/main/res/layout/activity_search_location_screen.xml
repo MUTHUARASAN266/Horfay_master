@@ -1,0 +1,164 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ui.SearchLocationScreen"
+    android:background="@color/white">
+
+    <com.google.android.material.appbar.AppBarLayout
+        android:id="@+id/appbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/transparent"
+        app:elevation="1dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <com.google.android.material.appbar.MaterialToolbar
+            android:layout_width="match_parent"
+            android:layout_height="56dp">
+
+            <ImageView
+                android:id="@+id/back_button"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/back_press_icon" />
+
+            <TextView
+                android:id="@+id/text_view_appbar"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:text="Change Location"
+                android:textAlignment="center"
+                android:textColor="#161616"
+                android:textSize="@dimen/sp20"
+                android:textStyle="bold" />
+        </com.google.android.material.appbar.MaterialToolbar>
+    </com.google.android.material.appbar.AppBarLayout>
+
+
+    <LinearLayout
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:orientation="vertical"
+        app:layout_constraintTop_toBottomOf="@id/appbar"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:backgroundTint="@color/white"
+        android:background="@drawable/corner_round">
+
+
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/dp10"
+            android:visibility="gone"
+            android:src="@drawable/rectangle_1120"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Select a location"
+            android:textSize="@dimen/sp18"
+            android:textColor="@color/black"
+            android:textStyle="bold"
+            android:layout_margin="@dimen/dp10"/>
+
+        <androidx.appcompat.widget.SearchView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:iconifiedByDefault="false"
+            android:background="@drawable/round_bg"
+            android:layout_margin="10dp"
+            android:backgroundTint="@color/gray"
+            android:queryHint="Search for area, street name. . ."/>
+
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/map_button"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/dp10"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/text_view_dummy123123"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:drawableStart="@drawable/frame__locator"
+                android:drawablePadding="@dimen/dp10"
+                android:text="Use current location"
+                android:textColor="@color/black"
+                android:textStyle="bold"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/right_arrow"
+                app:layout_constraintBottom_toBottomOf="@+id/text_view_dummy123123"
+                app:layout_constraintEnd_toEndOf="parent"
+                android:layout_marginEnd="@dimen/dp10"
+                app:layout_constraintTop_toTopOf="@+id/text_view_dummy123123" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/dp10"
+                android:visibility="gone"
+                android:text="Ayodhya Nagar Extension,\nAyodhya Bypass"
+                app:layout_constraintTop_toBottomOf="@+id/text_view_dummy123123"
+                app:layout_constraintStart_toStartOf="parent"
+                android:textColorHint="@color/gray"
+                android:layout_marginStart="@dimen/dp30"
+                />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_margin="@dimen/dp10"
+            android:background="#EBEBEB"/>
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:src="@drawable/directions_finding"/>
+        <androidx.appcompat.widget.AppCompatTextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/location_direction"
+            android:textSize="@dimen/sp16"
+            android:fontFamily="@font/inter"
+            android:textColor="@color/black"
+            android:textAlignment="center"/>
+
+<!--        <com.sahana.horizontalcalendar.HorizontalCalendar-->
+<!--            android:id="@+id/horizontalCalendar"-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="@dimen/dp55"-->
+<!--            android:layout_marginTop="10dp"-->
+<!--            app:numOfDays="60"-->
+<!--            app:setBgColor="@color/alice_blue"-->
+<!--            app:setSelectedBgColor="@color/card_back"-->
+<!--            app:setTextColor="@color/black"-->
+<!--            app:setSelectedTextColor="@color/_light_green"-->
+<!--            app:setDateTextSize="@dimen/dp20"-->
+<!--            app:setWeekTextSize="13sp"-->
+<!--            app:setMonthTextSize="17sp"-->
+<!--            app:setDateFontStyle="fonts/Light.otf"-->
+<!--            app:setLabelFontStyle="@string/bold"-->
+<!--            app:setMonthFontStyle=""-->
+<!--            app:setLabel="label"/>-->
+
+    </LinearLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

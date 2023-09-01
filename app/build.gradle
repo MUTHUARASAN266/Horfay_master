@@ -29,15 +29,16 @@ android {
         }
     }
     compileOptions {
-        sourceCompatibility JavaVersion.VERSION_1_8
-        targetCompatibility JavaVersion.VERSION_1_8
+        sourceCompatibility JavaVersion.VERSION_17
+        targetCompatibility JavaVersion.VERSION_17
     }
     kotlinOptions {
-        jvmTarget = '1.8'
+        jvmTarget = '17'
     }
     buildFeatures {
         viewBinding = true
     }
+
 }
 
 dependencies {
@@ -100,9 +101,28 @@ dependencies {
     implementation 'com.github.denzcoskun:ImageSlideshow:0.1.2'
 
     // sendbird sdk uikit
- //   implementation 'com.sendbird.sdk:uikit:3.6.0'
+    //   implementation 'com.sendbird.sdk:uikit:3.6.0'
 
     // sendbird sdk
- //   implementation 'com.sendbird.sdk:sendbird-android-sdk:3.1.18'
+    //   implementation 'com.sendbird.sdk:sendbird-android-sdk:3.1.18'
+
+
+    //  horizontal calendar
+    implementation 'io.github.b-sahana:horizontalcalendar:1.2.2'
+
+    implementation 'devs.mulham.horizontalcalendar:horizontalcalendar:1.3.4'
+
+    implementation 'com.github.Abhay-cloud:Horizontal-Infinite-Scrollable-Calendar-View-Android:v1.0.2'
+
+    implementation 'com.michalsvec:single-row-calednar:1.0.0'
+
+//    implementation 'com.github.puskal-khadka:MeroCalendar:1.0.3'
+
+
+    //new1
+    implementation 'com.github.a1573595:WeekCalendar:1.0.1'
+
+    implementation project(path: ':MeroCalendar')
+
 
 }

@@ -103,6 +103,9 @@ class OurservicesFragment : Fragment(R.layout.fragment_ourservices) {
                     currentSelectedItems.add(item)
                     Log.e(TAG, "onItemCheck: ${currentSelectedItems.size}", )
                     buttonCheck(currentSelectedItems.size)
+                    btnProceed.setOnClickListener {
+                        startActivity(Intent(context,ServicePageScreen::class.java).putParcelableArrayListExtra("ServicePageScreen_Data",currentSelectedItems))
+                    }
                 }
 
                 override fun onItemUncheck(item: VendorCartItemData?) {
@@ -112,9 +115,7 @@ class OurservicesFragment : Fragment(R.layout.fragment_ourservices) {
                 }
 
             })
-            btnProceed.setOnClickListener {
-                startActivity(Intent(context,ServicePageScreen::class.java))
-            }
+
 
         }
 

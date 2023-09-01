@@ -34,7 +34,6 @@ class HomeDashboard : Fragment(R.layout.fragment_home_dashboard) {
         val locala=arguments?.getString("address123")
         Log.e(TAG, "onCreate: $locala")
         activity?.window?.setSoftInputMode(WindowManager.LayoutParams.SOFT_INPUT_ADJUST_PAN)
-
     }
 
     @SuppressLint("SetTextI18n", "InflateParams")
@@ -43,7 +42,6 @@ class HomeDashboard : Fragment(R.layout.fragment_home_dashboard) {
         savedInstanceState: Bundle?
     ): View {
         activity?.window?.setSoftInputMode(WindowManager.LayoutParams.SOFT_INPUT_ADJUST_PAN)
-
         // Inflate the layout for this fragment
         binding = FragmentHomeDashboardBinding.inflate(inflater, container, false)
 
@@ -148,12 +146,13 @@ class HomeDashboard : Fragment(R.layout.fragment_home_dashboard) {
                 startActivity(Intent(context,ContactUsScreen::class.java))
                 Log.e(TAG, "onCreateView:ContactUsScreen", )
             }
+            hello.setText(sharedPreferences.loadData("u_user_name"))
+            number.setText(sharedPreferences.loadData("u_phoneNumber"))
 
         }
-
-
         binding.mutharsanKpk.setOnNavigationItemSelectedListener { item ->
             when (item.itemId) {
+
                 R.id.home_dashboard -> {
                     findNavController().navigate(R.id.home_dashboard)
                     true
@@ -172,8 +171,14 @@ class HomeDashboard : Fragment(R.layout.fragment_home_dashboard) {
                     binding.mutharsanKpk.visibility=View.GONE
                     true
                 }
+                R.id.yourCartFragment->{
+                    findNavController().navigate(R.id.yourCartFragment)
+                    binding.mutharsanKpk.visibility=View.GONE
+                    true
+                }
                 else -> false
             }
+
         }
 
 

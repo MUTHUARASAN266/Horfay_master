@@ -4,7 +4,7 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:layout_margin="@dimen/dp10"
-    android:background="@color/white">
+    android:background="@color/transparent">
 
     <com.google.android.material.card.MaterialCardView
         android:layout_width="match_parent"
@@ -108,6 +108,7 @@
                         android:layout_height="wrap_content"
                         android:drawableStart="@drawable/ellipse_23"
                         android:drawablePadding="@dimen/dp10"
+                        android:textColor="@color/gray"
                         android:text="Price starts from ₹599"
                         app:layout_constraintTop_toTopOf="parent" />
 
@@ -124,6 +125,7 @@
                         android:layout_height="wrap_content"
                         android:drawableStart="@drawable/ellipse_23"
                         android:drawablePadding="@dimen/dp10"
+                        android:textColor="@color/gray"
                         android:text="Specialises in Airbrush Make-up"
                         app:layout_constraintTop_toTopOf="parent" />
 
@@ -131,11 +133,13 @@
                 </androidx.constraintlayout.widget.ConstraintLayout>
                 <androidx.appcompat.widget.AppCompatTextView
                     android:id="@+id/vendor_text_provider_des1"
-                    android:layout_width="match_parent"
+                    android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:textSize="@dimen/sp8"
                     android:layout_marginTop="@dimen/dp5"
                     android:drawablePadding="@dimen/dp10"
+                    android:background="@drawable/addres_round_btn"
+                    android:textColor="@color/black"
                     android:text="Click to view vendor profile"
                     app:layout_constraintTop_toTopOf="parent" />
 

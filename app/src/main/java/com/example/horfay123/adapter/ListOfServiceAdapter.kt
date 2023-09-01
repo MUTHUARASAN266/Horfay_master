@@ -20,8 +20,13 @@ class ListOfServiceAdapter(private val myData: List<ListOfServiceData>,private v
         RecyclerView.ViewHolder(binding.root) {
 
         init {
-            binding.vendorTextProviderDes1.setOnClickListener {
-                listener.onUnitItemClick(myData[adapterPosition])
+            binding.apply {
+                vendorTextProviderDes1.setOnClickListener {
+                    listener.onUnitItemClick(myData[adapterPosition])
+                }
+                buttonListofProvider.setOnClickListener {
+                    //listener.onUnitItemClickPageScreen(myData[adapterPosition])
+                }
             }
         }
 

@@ -152,4 +152,7 @@
     <color name="space_cadet">#172B4D</color>
     <color name="cardBackground">@color/ghost_white</color>
     <color name="night_blue">#150B3D</color>
+    <color name="card_back">#DADADA</color>
+    <color name="garry_ad_back">#DADADA</color>
+    <color name="gray_light">#EBEBEB</color>
 </resources>

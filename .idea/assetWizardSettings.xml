@@ -3,6 +3,11 @@
   <component name="WizardSettings">
     <option name="children">
       <map>
+        <entry key="imageWizard">
+          <value>
+            <PersistentState />
+          </value>
+        </entry>
         <entry key="vectorWizard">
           <value>
             <PersistentState>
@@ -18,7 +23,7 @@
                                 <PersistentState>
                                   <option name="values">
                                     <map>
-                                      <entry key="url" value="file:/$USER_HOME$/AppData/Local/Android/Sdk/icons/material/materialicons/keyboard_arrow_down/baseline_keyboard_arrow_down_24.xml" />
+                                      <entry key="url" value="file:/$USER_HOME$/AppData/Local/Android/Sdk/icons/material/materialicons/radio_button_checked/baseline_radio_button_checked_24.xml" />
                                     </map>
                                   </option>
                                 </PersistentState>
@@ -28,9 +33,10 @@
                         </option>
                         <option name="values">
                           <map>
-                            <entry key="color" value="ffffff" />
-                            <entry key="outputName" value="arrow_down_svg" />
-                            <entry key="sourceFile" value="C:\Users\cipl1251\Downloads\Frame (3).svg" />
+                            <entry key="assetSourceType" value="FILE" />
+                            <entry key="color" value="0c0c0c" />
+                            <entry key="outputName" value="doc_svg" />
+                            <entry key="sourceFile" value="C:\Users\cipl1251\Downloads\Frame (4).svg" />
                           </map>
                         </option>
                       </PersistentState>

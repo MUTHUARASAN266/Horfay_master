@@ -145,6 +145,7 @@
         android:imeOptions="actionDone"
         app:boxStrokeColor="@color/white"
         app:counterMaxLength="150"
+        app:counterTextColor="@color/gray"
         android:layout_marginTop="@dimen/dp10"
         app:layout_constraintTop_toBottomOf="@id/textview_description"
         app:layout_constraintStart_toStartOf="@id/guideline_start"
@@ -155,6 +156,8 @@
             android:layout_height="@dimen/dp110"
             android:maxLength="100"
             android:textCursorDrawable="@null"
+            android:textColor="@color/black"
+            android:textColorHint="@color/gray"
             android:background="@drawable/singin_back"
             android:backgroundTint="@color/white"/>
 

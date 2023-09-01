@@ -68,13 +68,14 @@
                 app:layout_constraintTop_toBottomOf="@id/text_view_dummy123123"
                 android:src="@drawable/right_arrow"/>
 
-            <TextView
+            <androidx.appcompat.widget.AppCompatTextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="@dimen/dp10"
                 android:text="Ayodhya Nagar Extension,\nAyodhya Bypass"
                 app:layout_constraintTop_toBottomOf="@+id/text_view_dummy123123"
                 app:layout_constraintStart_toStartOf="parent"
+                android:textColorHint="@color/gray"
                 android:layout_marginStart="@dimen/dp30"
                  />
 

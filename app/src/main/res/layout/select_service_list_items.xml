@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.google.android.material.card.MaterialCardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    app:cardBackgroundColor="@color/card_back"
+    android:layout_margin="@dimen/dp10"
+    app:cardCornerRadius="@dimen/dp10">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/card_back">
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/view_card"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:layout_margin="@dimen/dp10"
+            app:cardCornerRadius="@dimen/dp6"
+            app:cardBackgroundColor="@color/card_back"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/imageview_ss_list"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:scaleType="fitXY"
+                android:src="@drawable/image16" />
+        </androidx.cardview.widget.CardView>
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/title_ss_list"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="Diamond Facial By \n R Spa"
+            android:layout_margin="@dimen/dp10"
+            android:textSize="@dimen/sp11"
+            android:textColor="@color/black"
+            android:fontFamily="@font/inter_bold"
+            app:layout_constraintStart_toEndOf="@+id/view_card"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/amount_ss_list"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="₹150"
+            android:textSize="@dimen/sp11"
+            android:fontFamily="@font/inter_bold"
+            android:textColor="@color/black"
+            app:layout_constraintStart_toStartOf="@+id/title_ss_list"
+            app:layout_constraintTop_toBottomOf="@id/title_ss_list" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_margin="@dimen/dp10"
+            app:layout_constraintBottom_toBottomOf="parent"
+            android:layout_marginBottom="@dimen/dp10"
+            app:layout_constraintTop_toBottomOf="@id/view_card"
+            >
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/text_min_ss_list"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="45 mins"
+                android:fontFamily="@font/inter"
+                android:textColor="@color/gray"
+                android:drawableStart="@drawable/ellipse_23"
+                android:drawablePadding="@dimen/dp10"
+                />
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/text_des1_ss_list"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textColor="@color/gray"
+                android:fontFamily="@font/inter"
+                app:layout_constraintTop_toBottomOf="@id/text_min_ss_list"
+                android:text="For all skin types. Pinacolada mask."
+                android:drawableStart="@drawable/ellipse_23"
+                android:drawablePadding="@dimen/dp10"
+                />
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/text_des2_ss_list"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textColor="@color/gray"
+                android:fontFamily="@font/inter"
+                app:layout_constraintTop_toBottomOf="@id/text_des1_ss_list"
+                android:text="6-step process. Includes 10-min massage"
+                android:drawableStart="@drawable/ellipse_23"
+                android:drawablePadding="@dimen/dp10"
+                />
+        </LinearLayout>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+</com.google.android.material.card.MaterialCardView>

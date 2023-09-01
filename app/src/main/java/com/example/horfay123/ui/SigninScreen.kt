@@ -154,6 +154,10 @@ class SigninScreen : AppCompatActivity() {
                                             "u_city",
                                             loginResult.token.details.city as String
                                         )
+                                        sharedPreferences.saveData(
+                                            "u_user_name",
+                                            loginResult.token.details.username as String
+                                        )
                                         it.snack(loginResult.token.status, 2000)
                                         startActivity(
                                             Intent(

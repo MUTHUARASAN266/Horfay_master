@@ -61,11 +61,11 @@
         android:background="@drawable/singin_back"
         android:backgroundTint="@color/black"
         android:text="@string/proceed"
-        android:visibility="gone"
         android:textColor="@color/alice_blue"
         app:layout_constraintEnd_toEndOf="@id/guideline_end"
         app:layout_constraintStart_toStartOf="@id/guideline_start"
-        app:layout_constraintTop_toBottomOf="@id/guideline_bottom" />
+        app:layout_constraintTop_toBottomOf="@id/recyclerview_service_offer"
+        app:layout_constraintBottom_toTopOf="@id/guideline_bottom" />
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/guideline_end"
@@ -86,7 +86,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        app:layout_constraintGuide_percent="0.90" />
+        app:layout_constraintGuide_percent="0.99" />
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/guideline_top"
